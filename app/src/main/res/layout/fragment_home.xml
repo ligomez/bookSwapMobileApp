@@ -3,12 +3,201 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragments.HomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ui.fragments.HomeFragment"
+    android:background="@color/primaryColor">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/primaryLightColor"
+        android:layout_gravity="bottom"
+        android:outlineProvider="none"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:outlineSpotShadowColor="@color/material_on_primary_disabled">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_outline_menu_24"
+            android:outlineSpotShadowColor="@color/primaryColor"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:src="@drawable/logo_word"
+        android:layout_marginTop="8dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_home"
+        android:textColor="@color/secondaryColor"
+        android:textAlignment="center"
+        android:layout_marginTop="70dp"
+        android:textSize="20sp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="168dp"
+        android:background="@color/primaryLightColor"
+        app:cardCornerRadius="32dp"
+        android:outlineProvider="none">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categorías"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/secondaryTextColor"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="36dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24sp"
+                android:text="Ver todo"
+                android:textColor="@color/primaryColor"
+                android:textStyle="bold"
+                android:layout_marginRight="36dp"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:gravity="bottom"
+                android:textAlignment="textEnd"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="72dp"
+                android:background="@color/secondaryLightColor"
+                android:text="Cómics"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/secondaryDarkColor"
+                android:gravity="bottom"
+                android:textAlignment="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="36dp">
+            </TextView>
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/superhero"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="54dp"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="72dp"
+                android:background="@color/secondaryLightColor"
+                android:text="Novelas"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/secondaryDarkColor"
+                android:gravity="bottom"
+                android:textAlignment="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="152dp"/>
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/novels"
+                android:layout_marginTop="56dp"
+                android:layout_marginLeft="168dp"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="72dp"
+                android:background="@color/secondaryLightColor"
+                android:text="Estadística"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/secondaryDarkColor"
+                android:gravity="bottom"
+                android:textAlignment="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="268dp"/>
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/statistic2"
+                android:layout_marginTop="56dp"
+                android:layout_marginLeft="284dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Publicaciones recientes"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/secondaryTextColor"
+                android:layout_marginTop="134dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginBottom="24dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="27sp"
+                android:text="Ver todo"
+                android:textColor="@color/primaryColor"
+                android:textStyle="bold"
+                android:layout_marginTop="134dp"
+                android:layout_marginRight="36dp"
+                android:textSize="12sp"
+                android:gravity="bottom"
+                android:textAlignment="textEnd"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="168dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:cardBackgroundColor="@color/secondaryLightColor"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:cardBackgroundColor="@color/secondaryLightColor"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:layout_marginTop="88dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:cardBackgroundColor="@color/secondaryLightColor"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:layout_marginTop="176dp"/>
+
+            </FrameLayout>
+        </FrameLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/HomeFragment"
+        android:title="Inicio"
+        android:icon="@drawable/ic_outline_home_24"/>
+
+    <item
+        android:id="@+id/FavouritesFragment"
+        android:title="Favoritos"
+        android:icon="@drawable/ic_baseline_favorite_border_24"/>
+
+    <item
+        android:id="@+id/MyBooksFragment"
+        android:title="Mis libros"
+        android:icon="@drawable/ic_outline_menu_book_24"/>
+
+    <item
+        android:id="@+id/MessagesFragment"
+        android:title="Mensajes"
+        android:icon="@drawable/ic_outline_message_24"/>
+
+    <item
+        android:id="@+id/AccountFragment"
+        android:title="Mi cuenta"
+        android:icon="@drawable/ic_outline_account_circle_24"/>
+
+
+</menu>

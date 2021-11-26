@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ui.fragments.MessagesFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/rlBaseMessages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryLightColor">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="No tienes mensajes todavía"
+            android:textColor="@color/primaryColor"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Busca tu primer libro y comienza a hacer contactos en nuestra plataforma!"
+            android:layout_marginTop="72dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:textAlignment="center"
+            android:textSize="16dp"/>
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="75dp"
+            android:background="@color/secondaryLightColor"
+            android:outlineProvider="paddedBounds"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="95dp"
+            android:gravity="center"
+            android:hint="Introduce un título ahora"
+            android:textSize="14dp" />
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
