@@ -6,4 +6,7 @@
     <string name="hint_password">Contraseña</string>
     <string name="button_login">Login</string>
     <string name="intro_home">Encuentra tu próximo Libro ahora</string>
+    <string name="tvMyBooksTittle">Libros que has intercambiado</string>
+    <string name="btnCalificaMyBooks">Califica este título</string>
+    <string name="btnPublicarNuevamente">Publicar nuevamente</string>
 </resources>

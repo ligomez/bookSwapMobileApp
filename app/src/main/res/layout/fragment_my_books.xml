@@ -5,7 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.fragments.MyBooksFragment">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvMyBooksTittle"
+        android:textAlignment="center"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMyBooks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
