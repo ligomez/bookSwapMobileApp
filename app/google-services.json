@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "388504072216",
+    "project_id": "buku-7d144",
+    "storage_bucket": "buku-7d144.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388504072216:android:2ed746d1d8239ac61c936d",
+        "android_client_info": {
+          "package_name": "com.example.buku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388504072216-vbdu9nob911v3gltup5nmpb9q9nteh7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB56ijyzPRpTgonRv4iDf08y1GYvkkVIq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388504072216-vbdu9nob911v3gltup5nmpb9q9nteh7u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
