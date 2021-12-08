@@ -37,9 +37,9 @@ class LoginActivity : AppCompatActivity() {
 
         providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build(),
-//            AuthUI.IdpConfig.GoogleBuilder().build(),
-//            AuthUI.IdpConfig.PhoneBuilder().build(),
-//            AuthUI.IdpConfig.AnonymousBuilder().build(),
+            AuthUI.IdpConfig.GoogleBuilder().build(),
+            AuthUI.IdpConfig.PhoneBuilder().build(),
+            AuthUI.IdpConfig.AnonymousBuilder().build(),
         )
 
         val intent = Intent(this,MainActivity::class.java)
