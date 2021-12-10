@@ -20,14 +20,16 @@
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_favourites.xml" value="0.1" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_log_in.xml" value="0.1" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_log_in.xml" value="0.264" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_log_in_dialog.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_login.xml" value="0.24139492753623187" />
-        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_messages.xml" value="0.264" />
-        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_my_books.xml" value="0.1" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_messages.xml" value="0.16842105263157894" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_my_books.xml" value="0.16" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_books.xml" value="0.2" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_favourites.xml" value="0.2821557971014493" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_messages.xml" value="0.2821557971014493" />
-        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_my_books.xml" value="0.176" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_my_books.xml" value="0.1" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/menu/bnv_menu.xml" value="0.1" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.32916666666666666" />
       </map>
