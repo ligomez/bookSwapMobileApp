@@ -55,6 +55,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/btVerMas"
             android:layout_width="80dp"
             android:layout_height="32dp"
             android:layout_gravity="end"
@@ -66,6 +67,4 @@
             android:textSize="9dp" />
 
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

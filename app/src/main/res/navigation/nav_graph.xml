@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_myBooksFragment_to_messagesFragment"
             app:destination="@id/navMessagesFragment" />
+        <action
+            android:id="@+id/action_navMyBooksFragment_to_bookDetailFragmentDialog"
+            app:destination="@+id/bookDetailDialogFragment"/>
     </fragment>
     <fragment
         android:id="@+id/navMessagesFragment"
@@ -47,6 +50,10 @@
         android:name="com.example.buku.view.ui.fragments.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" />
+    <dialog
+        android:id="@+id/bookDetailDialogFragment"
+        android:name="com.example.buku.view.ui.fragments.BookDetailDialogFragment"
+        android:label="BookDetailDialogFragment" />
 
 
 </navigation>

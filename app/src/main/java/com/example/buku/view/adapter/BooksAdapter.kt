@@ -40,10 +40,10 @@ RecyclerView.Adapter<BooksAdapter.ViewHolder> () {
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvNameBook = itemView.findViewById<TextView>(R.id.tvNameBook)
-        val tvAuthorBook = itemView.findViewById<TextView>(R.id.tvAuthorBook)
-        val tvLocation = itemView.findViewById<TextView>(R.id.tvLocation)
-        val ivBookImage = itemView.findViewById<ImageView>(R.id.ivBookImage)
+        val tvNameBook: TextView = itemView.findViewById(R.id.tvNameBook)
+        val tvAuthorBook: TextView = itemView.findViewById(R.id.tvAuthorBook)
+        val tvLocation: TextView = itemView.findViewById(R.id.tvLocation)
+        val ivBookImage: ImageView = itemView.findViewById(R.id.ivBookImage)
     }
 
 }
