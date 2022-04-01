@@ -9,7 +9,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tvLibrosDisponibles"
+        android:text="@string/tvSwappedBooksTitle"
         android:textAlignment="center"
         android:textColor="@color/secondaryTextColor"
         android:textSize="20dp"
