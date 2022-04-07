@@ -13,4 +13,8 @@
     <string name="see_all">Ver todo</string>
     <string name="recent_posts_title">Publicaciones recientes</string>
     <string name="ivLogoApp">Logo</string>
+    <string name="tv_no_account">¿No tienes cuenta?</string>
+    <string name="tv_create_account">¡Crea una acá!</string>
+    <string name="tv_forgot_password">Olvidé mi contraseña</string>
+    <string name="tv_welcome">Bienvenido</string>
 </resources>
