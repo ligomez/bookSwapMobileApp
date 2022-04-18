@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryLightColor">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/secondaryLightColor"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBookImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/book_image"
+                android:src="@drawable/comer_rezar_amar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNameBook"
+                style="@style/black_bold_subtitles"
+                android:layout_width="0dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="16sp"
+                android:text="@string/comer_rezar_amar"
+                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvAuthorBook"
+                style="@style/black_subtitles"
+                android:layout_width="0dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="12sp"
+                android:text="@string/elizabeth_gilbert"
+                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
+                app:layout_constraintTop_toBottomOf="@id/tvNameBook"
+                app:layout_constraintEnd_toStartOf="@id/btVerMas"/>
+
+            <TextView
+                android:id="@+id/tvLocation"
+                style="@style/gray_bold_subtitles"
+                android:layout_width="0dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/secondaryDarkColor"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:text="Bogota, Salitre Plaza"
+                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
+                app:layout_constraintTop_toBottomOf="@+id/tvAuthorBook"
+                app:layout_constraintEnd_toStartOf="@+id/btVerMas"/>
+
+            <Button
+                android:id="@+id/btVerMas"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/btnVerMas"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvAuthorBook"
+                app:layout_constraintTop_toBottomOf="@+id/tvNameBook" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

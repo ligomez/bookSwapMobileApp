@@ -7,17 +7,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buku.R
-import com.example.buku.model.Books
+import com.example.buku.model.Book
 import com.squareup.picasso.Picasso
 
 class BooksAdapter(val booksListener: BooksListener) :
 RecyclerView.Adapter<BooksAdapter.ViewHolder> () {
 
-    var listBooks = ArrayList<Books> ()
+    var listBooks = ArrayList<Book> ()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_books, parent,false))
+            .inflate(R.layout.item_book, parent,false))
 
     override fun onBindViewHolder(holder: BooksAdapter.ViewHolder, position: Int) {
         val books = listBooks[position]
@@ -33,7 +33,7 @@ RecyclerView.Adapter<BooksAdapter.ViewHolder> () {
 
     override fun getItemCount() = listBooks.size
 
-    fun updateData(data: List<Books>) {
+    fun updateData(data: List<Book>) {
         listBooks.clear()
         listBooks.addAll(data)
         notifyDataSetChanged()

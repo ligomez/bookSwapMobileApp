@@ -29,7 +29,8 @@
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_messages_dialog.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_my_books.xml" value="0.16" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
-        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_books.xml" value="0.2" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_book.xml" value="0.264" />
+        <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_books.xml" value="0.4" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_favourites.xml" value="0.2821557971014493" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_messages.xml" value="0.2821557971014493" />
         <entry key="..\:/Users/gomez/AndroidStudioProjects/Buku/app/src/main/res/layout/item_my_books.xml" value="0.1" />
@@ -47,7 +48,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.264" />
+        <option name="scale" value="0.1" />
       </ProjectState>
     </option>
   </component>

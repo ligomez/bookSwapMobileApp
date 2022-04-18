@@ -1,7 +1,7 @@
 package com.example.buku.view.adapter
 
-import com.example.buku.model.Books
+import com.example.buku.model.Book
 
 interface BooksListener {
-    fun onBooksClick(book: Books, position: Int)
+    fun onBooksClick(book: Book, position: Int)
 }

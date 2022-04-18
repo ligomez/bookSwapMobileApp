@@ -20,4 +20,21 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="black_bold_subtitles">
+        <item name="android:textColor">"@color/primaryColor"</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="black_subtitles">
+        <item name="android:textColor">"@color/primaryColor"</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="gray_bold_subtitles">
+        <item name="android:textColor">"@color/secondaryDarkColor"</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

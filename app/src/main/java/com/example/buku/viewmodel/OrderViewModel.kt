@@ -2,13 +2,13 @@ package com.example.buku.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.buku.model.Books
+import com.example.buku.model.Book
 import com.example.buku.network.Callback
 import com.example.buku.network.FirestoreService
 
 class OrderViewModel: ViewModel() {
     val firestoreService = FirestoreService()
-    val listBooks : MutableLiveData<List<Books>> = MutableLiveData()
+    val listBooks : MutableLiveData<List<Book>> = MutableLiveData()
     val isLoading = MutableLiveData<Boolean>()
 
     fun refresh(){
@@ -16,8 +16,8 @@ class OrderViewModel: ViewModel() {
     }
 
     private fun getBooksFromFirebase() {
-        firestoreService.getBooks(object : Callback<List<Books>>{
-            override fun onSuccess(result: List<Books>?) {
+        firestoreService.getBooks(object : Callback<List<Book>>{
+            override fun onSuccess(result: List<Book>?) {
                 listBooks.postValue(result)
                 processFinished()
             }

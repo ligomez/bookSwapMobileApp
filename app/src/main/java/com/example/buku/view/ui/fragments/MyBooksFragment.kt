@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buku.R
 import com.example.buku.databinding.FragmentMyBooksBinding
-import com.example.buku.model.Books
+import com.example.buku.model.Book
 import com.example.buku.view.adapter.BooksAdapter
 import com.example.buku.view.adapter.BooksListener
 import com.example.buku.viewmodel.OrderViewModel
@@ -61,7 +61,7 @@ class MyBooksFragment : Fragment(), BooksListener {
     }
 
     fun observeViewModel() {
-        orderViewModel.listBooks.observe(viewLifecycleOwner, Observer<List<Books>> {
+        orderViewModel.listBooks.observe(viewLifecycleOwner, Observer<List<Book>> {
             books ->
             booksAdapter.updateData(books)
         })
@@ -72,7 +72,7 @@ class MyBooksFragment : Fragment(), BooksListener {
         })
     }
 
-    override fun onBooksClick(book: Books, position: Int) {
+    override fun onBooksClick(book: Book, position: Int) {
         val bundle = bundleOf("book" to book)
         findNavController().navigate(R.id.bookDetailDialogFragment, bundle)
     }
