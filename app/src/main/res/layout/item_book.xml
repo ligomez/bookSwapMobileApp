@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/primaryLightColor">
@@ -9,7 +8,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:elevation="4dp"
         app:cardBackgroundColor="@color/secondaryLightColor"
         app:cardCornerRadius="16dp"
@@ -23,7 +25,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/ivBookImage"
+                android:id="@+id/ivImageBook"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="16dp"
@@ -41,14 +43,14 @@
                 android:layout_width="0dp"
                 android:layout_height="19dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/comer_rezar_amar"
                 android:textColor="@color/secondaryTextColor"
                 android:textSize="16sp"
-                android:text="@string/comer_rezar_amar"
-                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivImageBook"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvAuthorBook"
@@ -56,14 +58,14 @@
                 android:layout_width="0dp"
                 android:layout_height="14dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/elizabeth_gilbert"
                 android:textColor="@color/secondaryTextColor"
                 android:textSize="12sp"
-                android:text="@string/elizabeth_gilbert"
-                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
-                app:layout_constraintTop_toBottomOf="@id/tvNameBook"
-                app:layout_constraintEnd_toStartOf="@id/btVerMas"/>
+                app:layout_constraintEnd_toStartOf="@id/btVerMas"
+                app:layout_constraintStart_toEndOf="@+id/ivImageBook"
+                app:layout_constraintTop_toBottomOf="@id/tvNameBook" />
 
             <TextView
                 android:id="@+id/tvLocation"
@@ -73,13 +75,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:textColor="@color/secondaryDarkColor"
+                android:text="@string/bogota_salitre_plaza"
+                android:textColor="#757575"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:text="Bogota, Salitre Plaza"
-                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
-                app:layout_constraintTop_toBottomOf="@+id/tvAuthorBook"
-                app:layout_constraintEnd_toStartOf="@+id/btVerMas"/>
+                app:layout_constraintEnd_toStartOf="@+id/btVerMas"
+                app:layout_constraintStart_toEndOf="@+id/ivImageBook"
+                app:layout_constraintTop_toBottomOf="@+id/tvAuthorBook" />
 
             <Button
                 android:id="@+id/btVerMas"
