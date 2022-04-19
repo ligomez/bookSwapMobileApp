@@ -1,4 +1,38 @@
 package com.example.buku.view.adapter
 
-class CategoriesAdapter {
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.buku.R
+import com.example.buku.model.Category
+
+class CategoriesAdapter (
+    private val categoriesList: ArrayList<Category>
+        ): RecyclerView.Adapter<CategoriesAdapter.ViewHolder>(){
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val category = categoriesList[position]
+        holder.bind(category)
+    }
+
+    override fun getItemCount(): Int = categoriesList.size
+
+
+    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private var tvCategoryName: TextView = itemView.findViewById(R.id.tvCategoryName)
+        private var ivIconCategory: ImageView = itemView.findViewById(R.id.ivIconCategory)
+
+        fun bind(category: Category) {
+            tvCategoryName.text = category.name
+        }
+
+    }
 }

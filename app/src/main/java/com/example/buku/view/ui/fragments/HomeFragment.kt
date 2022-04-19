@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buku.R
 import com.example.buku.model.Book
+import com.example.buku.model.Category
 import com.example.buku.view.adapter.BooksAdapter
+import com.example.buku.view.adapter.CategoriesAdapter
 
 
 class HomeFragment : Fragment() {
@@ -17,6 +19,10 @@ class HomeFragment : Fragment() {
     private lateinit var listBooks: ArrayList<Book>
     private lateinit var booksAdapter: BooksAdapter
     private lateinit var booksRecyclerView: RecyclerView
+
+    private lateinit var listCategories: ArrayList<Category>
+    private lateinit var categoriesAdapter: CategoriesAdapter
+    private lateinit var categoriesRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +45,16 @@ class HomeFragment : Fragment() {
             adapter = BooksAdapter(listBooks)
             setHasFixedSize(false)
         }
+
+        categoriesRecyclerView = requireView().findViewById(R.id.rvCategoriesHome)
+        listCategories = createMockCategories()
+        categoriesAdapter = CategoriesAdapter(listCategories)
+
+        categoriesRecyclerView.apply {
+            layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
+            adapter = CategoriesAdapter(listCategories)
+            setHasFixedSize(false)
+        }
     }
 
 
@@ -55,6 +71,18 @@ class HomeFragment : Fragment() {
             Book(name = "Comer Rezar Amar",
                 author = "Elizabeth Gilbert",
                 location = "Cali")
+        )
+    }
+
+
+    private fun createMockCategories(): ArrayList<Category> {
+        return arrayListOf(
+            Category(name = "Novels"),
+            Category(name = "Comics"),
+            Category(name = "Statistics"),
+            Category(name = "Thriller"),
+            Category(name = "Science Fiction"),
+            Category(name = "Kids"),
         )
     }
 }

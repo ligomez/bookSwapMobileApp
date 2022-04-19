@@ -1,6 +1,5 @@
 package com.example.buku.view.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,7 @@ import com.example.buku.model.Book
 
 class BooksAdapter(
     private val booksList: ArrayList<Book>
-) : RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
+): RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)

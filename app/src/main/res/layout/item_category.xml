@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/ivNovelsCategory"
+                android:id="@+id/ivIconCategory"
                 android:layout_width="88dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="8dp"
@@ -36,6 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tvCategoryName"
                 style="@style/gray_bold_subtitles"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -43,9 +44,9 @@
                 android:text="@string/novels"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/ivNovelsCategory"
-                app:layout_constraintStart_toStartOf="@id/ivNovelsCategory"
-                app:layout_constraintTop_toBottomOf="@+id/ivNovelsCategory" />
+                app:layout_constraintEnd_toEndOf="@+id/ivIconCategory"
+                app:layout_constraintStart_toStartOf="@id/ivIconCategory"
+                app:layout_constraintTop_toBottomOf="@+id/ivIconCategory" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
