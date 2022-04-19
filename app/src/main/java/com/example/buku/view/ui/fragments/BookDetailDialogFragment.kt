@@ -36,7 +36,7 @@ class BookDetailDialogFragment : DialogFragment() {
         binding.tvNameBook.text = books.name
         binding.tvAuthorBook.text = books.author
         binding.tvLocation.text = books.location
-        Picasso.get().load(books.imageUrl).into(binding.ivBookImage)
+//        Picasso.get().load(books.imageUrl).into(binding.ivBookImage)
 
         binding.btVerMas.setOnClickListener {
             dismiss()

@@ -48,7 +48,7 @@ class MyBooksFragment : Fragment(), BooksListener {
         orderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
         orderViewModel.refresh()
 
-        booksAdapter = BooksAdapter(this)
+//        booksAdapter = BooksAdapter(this)
 
         binding.rvBooks.apply {
             layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL,
@@ -61,10 +61,10 @@ class MyBooksFragment : Fragment(), BooksListener {
     }
 
     fun observeViewModel() {
-        orderViewModel.listBooks.observe(viewLifecycleOwner, Observer<List<Book>> {
-            books ->
-            booksAdapter.updateData(books)
-        })
+//        orderViewModel.listBooks.observe(viewLifecycleOwner, Observer<List<Book>> {
+//            books ->
+//            booksAdapter.updateData(books)
+//        })
 
         orderViewModel.isLoading.observe(viewLifecycleOwner, Observer<Boolean> {
             if (it != null)
