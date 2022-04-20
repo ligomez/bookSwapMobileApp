@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buku.R
 import com.example.buku.model.Book
+import com.squareup.picasso.Picasso
 
 
 class BooksAdapter(
@@ -37,6 +38,7 @@ class BooksAdapter(
             tvNameBook.text = book.name
             tvAuthorBook.text = book.author
             tvLocation.text = book.location
+            Picasso.get().load(book.imageUrl).into(ivBookImage)
 
         }
     }

@@ -1,0 +1,29 @@
+[
+    {
+        "name" : "Will",
+        "author" : "Will Smith with Mark Manson",
+        "location" : "Bogota",
+        "imageUrl" : "https://markmanson.net/wp-content/uploads/2021/11/will-book-cover.png"
+    },
+
+    {
+        "name" : "One Hundred Years of Solitude",
+        "author" : "Gabriel Garcia Marquez",
+        "location" : "Suba",
+        "imageUrl" : "https://www.jmichaelsbooks.com/pictures/900662.jpg"
+    },
+
+    {
+        "name" : "Eat Pray Love",
+        "author" : "Elizabeth Gilbert",
+        "location" : "Cali",
+        "imageUrl" : "https://images.squarespace-cdn.com/content/v1/56b1196f37013bf2902300c6/1550101007941-GNR0VNCUICFWVV8C2MEY/IMG_8767.jpg"
+    },
+
+    {
+       " name" : "The Subtle Art of Not Giving a F*ck",
+        "author" : "EMark Manson",
+        "location" : "Bogota",
+        "imageUrl" : "https://miro.medium.com/max/1400/1*qXp9MemqNmYwhoNptxeflg.jpeg"
+    }
+]
