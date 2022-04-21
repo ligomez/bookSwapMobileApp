@@ -3,27 +3,27 @@
         "name" : "Will",
         "author" : "Will Smith with Mark Manson",
         "location" : "Bogota",
-        "imageUrl" : "https://markmanson.net/wp-content/uploads/2021/11/will-book-cover.png"
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484682/Buku/WillBook_v2tc5h.jpg"
     },
 
     {
         "name" : "One Hundred Years of Solitude",
         "author" : "Gabriel Garcia Marquez",
         "location" : "Suba",
-        "imageUrl" : "https://www.jmichaelsbooks.com/pictures/900662.jpg"
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484782/Buku/100years_ux0zcd.jpg"
     },
 
     {
         "name" : "Eat Pray Love",
         "author" : "Elizabeth Gilbert",
         "location" : "Cali",
-        "imageUrl" : "https://images.squarespace-cdn.com/content/v1/56b1196f37013bf2902300c6/1550101007941-GNR0VNCUICFWVV8C2MEY/IMG_8767.jpg"
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484840/Buku/eatPrayLove_xy0t0j.jpg"
     },
 
     {
-       " name" : "The Subtle Art of Not Giving a F*ck",
-        "author" : "EMark Manson",
+       "name" : "The Subtle Art of Not Giving a F*ck",
+        "author" : "Mark Manson",
         "location" : "Bogota",
-        "imageUrl" : "https://miro.medium.com/max/1400/1*qXp9MemqNmYwhoNptxeflg.jpeg"
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484902/Buku/theSubtleArt_uknwk8.jpg"
     }
 ]

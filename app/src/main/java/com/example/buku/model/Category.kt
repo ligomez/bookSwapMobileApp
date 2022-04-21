@@ -1,8 +1,10 @@
 package com.example.buku.model
 
-import android.graphics.drawable.AdaptiveIconDrawable
+import com.google.gson.annotations.SerializedName
 
 data class Category (
+    @SerializedName("name")
     var name: String,
-//    var iconDrawable: AdaptiveIconDrawable
-        )
+    @SerializedName("imageUrl")
+    var imageUrl: String
+    )

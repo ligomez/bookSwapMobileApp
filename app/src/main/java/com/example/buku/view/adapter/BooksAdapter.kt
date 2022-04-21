@@ -32,7 +32,7 @@ class BooksAdapter(
         private var tvNameBook: TextView = itemView.findViewById(R.id.tvNameBook)
         private var tvAuthorBook: TextView = itemView.findViewById(R.id.tvAuthorBook)
         private var tvLocation: TextView = itemView.findViewById(R.id.tvLocation)
-        private var ivBookImage: ImageView = itemView.findViewById(R.id.ivImageBook)
+        private var ivBookImage: ImageView = itemView.findViewById(R.id.ivBookImage)
 
         fun bind(book: Book) {
             tvNameBook.text = book.name

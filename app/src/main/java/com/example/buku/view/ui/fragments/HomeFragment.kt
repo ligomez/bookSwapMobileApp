@@ -1,7 +1,6 @@
 package com.example.buku.view.ui.fragments
 
 import android.os.Bundle
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +11,10 @@ import com.example.buku.R
 import com.example.buku.model.Book
 import com.example.buku.model.BookList
 import com.example.buku.model.Category
+import com.example.buku.model.CategoryList
 import com.example.buku.view.adapter.BooksAdapter
 import com.example.buku.view.adapter.CategoriesAdapter
 import com.google.gson.Gson
-
 
 
 class HomeFragment : Fragment() {
@@ -50,8 +49,10 @@ class HomeFragment : Fragment() {
             setHasFixedSize(false)
         }
 
+
         categoriesRecyclerView = requireView().findViewById(R.id.rvCategoriesHome)
-        listCategories = createMockCategories()
+//        listCategories = createMockCategories()
+        listCategories = loadMockCategoriesFromJason()
         categoriesAdapter = CategoriesAdapter(listCategories)
 
         categoriesRecyclerView.apply {
@@ -61,24 +62,33 @@ class HomeFragment : Fragment() {
         }
     }
 
+
     private fun loadMockBooksFromJason(): ArrayList<Book> {
         val booksString: String =
             activity?.applicationContext?.assets?.open("books.json")?.bufferedReader()
                 .use { it!!.readText() }
         val gson = Gson()
         return gson.fromJson(booksString, BookList::class.java)
-
     }
 
 
-    private fun createMockCategories(): ArrayList<Category> {
-        return arrayListOf(
-            Category(name = "Novels"),
-            Category(name = "Comics"),
-            Category(name = "Statistics"),
-            Category(name = "Thriller"),
-            Category(name = "Science Fiction"),
-            Category(name = "Kids"),
-        )
+    private fun loadMockCategoriesFromJason(): ArrayList<Category> {
+        val categoriesString: String =
+            activity?.applicationContext?.assets?.open("categories.json")?.bufferedReader()
+                .use { it!!.readText() }
+        val gson = Gson()
+        return gson.fromJson(categoriesString, CategoryList::class.java)
     }
+
+
+//    private fun createMockCategories(): ArrayList<Category> {
+//        return arrayListOf(
+//            Category(name = "Novels"),
+//            Category(name = "Comics"),
+//            Category(name = "Statistics"),
+//            Category(name = "Thriller"),
+//            Category(name = "Science Fiction"),
+//            Category(name = "Kids"),
+//        )
+//    }
 }

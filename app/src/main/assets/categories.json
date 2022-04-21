@@ -1,0 +1,41 @@
+[
+    {
+        "name" : "Technology",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650487126/Buku/Categories/cloud-storage_btnqiw.png"
+    },
+
+    {
+        "name" : "Home and garden",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650486914/Buku/Categories/plant_ry0aen.png"
+    },
+
+    {
+        "name" : "Health/fitness",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650487008/Buku/Categories/nutrition_p2kjlk.png"
+    },
+
+    {
+        "name" : "Self help",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650487511/Buku/Categories/positive-thinking_voqhs6.png"
+    },
+
+    {
+        "name" : "Gastronomy",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650486787/Buku/Categories/chef_yywxl4.png"
+    },
+
+    {
+        "name" : "Romance",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650487627/Buku/Categories/wedding-day_oaqrqy.png"
+    },
+
+    {
+        "name" : "Crime",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650487488/Buku/Categories/fingerprint_yjists.png"
+    },
+
+    {
+        "name" : "Science",
+        "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650487764/Buku/Categories/dna-strand_zflh5o.png"
+    }
+]

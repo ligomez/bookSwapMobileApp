@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buku.R
 import com.example.buku.model.Category
+import com.squareup.picasso.Picasso
 
 class CategoriesAdapter (
     private val categoriesList: ArrayList<Category>
@@ -28,10 +29,11 @@ class CategoriesAdapter (
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var tvCategoryName: TextView = itemView.findViewById(R.id.tvCategoryName)
-        private var ivIconCategory: ImageView = itemView.findViewById(R.id.ivIconCategory)
+        private var ivCategoryImage: ImageView = itemView.findViewById(R.id.ivCategoryImage)
 
         fun bind(category: Category) {
             tvCategoryName.text = category.name
+            Picasso.get().load(category.imageUrl).into(ivCategoryImage)
         }
 
     }
