@@ -1,6 +1,7 @@
 package com.example.buku.view.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,25 +42,29 @@ class HomeFragment : Fragment() {
 
         booksRecyclerView = requireView().findViewById(R.id.rvBooksHome)
         listBooks = loadMockBooksFromJason()
-        booksAdapter = BooksAdapter(listBooks)
+        booksAdapter = BooksAdapter(listBooks, onItemClicked = { onBookClicked(it)})
 
         booksRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = BooksAdapter(listBooks)
+            adapter = booksAdapter
             setHasFixedSize(false)
         }
 
 
         categoriesRecyclerView = requireView().findViewById(R.id.rvCategoriesHome)
-//        listCategories = createMockCategories()
         listCategories = loadMockCategoriesFromJason()
         categoriesAdapter = CategoriesAdapter(listCategories)
 
         categoriesRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
-            adapter = CategoriesAdapter(listCategories)
+            adapter = categoriesAdapter
             setHasFixedSize(false)
         }
+    }
+
+    private fun onBookClicked(book: Book) {
+        Log.d("name", book.name)
+
     }
 
 
@@ -79,16 +84,4 @@ class HomeFragment : Fragment() {
         val gson = Gson()
         return gson.fromJson(categoriesString, CategoryList::class.java)
     }
-
-
-//    private fun createMockCategories(): ArrayList<Category> {
-//        return arrayListOf(
-//            Category(name = "Novels"),
-//            Category(name = "Comics"),
-//            Category(name = "Statistics"),
-//            Category(name = "Thriller"),
-//            Category(name = "Science Fiction"),
-//            Category(name = "Kids"),
-//        )
-//    }
 }

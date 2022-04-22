@@ -12,7 +12,8 @@ import com.squareup.picasso.Picasso
 
 
 class BooksAdapter(
-    private val booksList: ArrayList<Book>
+    private val booksList: ArrayList<Book>,
+    private val onItemClicked: (Book) -> Unit
 ): RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,6 +23,7 @@ class BooksAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = booksList[position]
+        holder.itemView.setOnClickListener { onItemClicked(booksList[position])}
         holder.bind(book)
     }
 

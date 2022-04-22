@@ -52,7 +52,7 @@
         tools:layout="@layout/fragment_log_in" />
     <dialog
         android:id="@+id/bookDetailDialogFragment"
-        android:name="com.example.buku.view.ui.fragments.BookDetailDialogFragment"
+        android:name="com.example.buku.view.ui.fragments.BookDetailFragment"
         android:label="BookDetailDialogFragment" />
 
 

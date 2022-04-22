@@ -1,6 +1,7 @@
 package com.example.buku.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Book(
     @SerializedName("name")
@@ -11,7 +12,7 @@ data class Book(
     val location: String,
     @SerializedName("imageUrl")
     val imageUrl: String
-)
+) : Serializable
 
 //
 //data class Book(

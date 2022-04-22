@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
-import com.example.buku.databinding.FragmentBookDetailDialogBinding
+import androidx.fragment.app.Fragment
+import com.example.buku.databinding.FragmentBookDetailBinding
 import com.example.buku.model.Book
-import com.squareup.picasso.Picasso
 
-class BookDetailDialogFragment : DialogFragment() {
+class BookDetailFragment : Fragment() {
 
-    private var _binding: FragmentBookDetailDialogBinding? = null
+    private var _binding: FragmentBookDetailBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,7 +18,7 @@ class BookDetailDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentBookDetailDialogBinding.inflate(inflater,container,false)
+        _binding = FragmentBookDetailBinding.inflate(inflater,container,false)
         var view = binding.root
         return view
     }
@@ -39,14 +38,8 @@ class BookDetailDialogFragment : DialogFragment() {
 //        Picasso.get().load(books.imageUrl).into(binding.ivBookImage)
 
         binding.btVerMas.setOnClickListener {
-            dismiss()
-        }
-    }
 
-    override fun onStart() {
-        super.onStart()
-        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.MATCH_PARENT)
+        }
     }
 
 }
