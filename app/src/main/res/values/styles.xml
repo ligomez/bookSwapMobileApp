@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LoginTheme" parent="FirebaseUI">
+        <item name="colorPrimary">@color/primaryDarkColor</item>
+        <item name="colorPrimaryDark">@color/primaryColor</item>
+        <item name="colorAccent">@color/primaryDarkColor</item>
+        <item name="android:windowBackground">@color/primaryColor</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="black_bold_titles">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="small_blue_link">
+        <item name="android:textColor">"@color/primaryColor"</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="black_bold_subtitles">
+        <item name="android:textColor">"@color/secondaryTextColor"</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="black_paragraph">
+        <item name="android:textColor">"@color/secondaryTextColor"</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="black_subtitles">
+        <item name="android:textColor">"@color/secondaryTextColor"</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="gray_bold_subtitles">
+        <item name="android:textColor">"@color/secondaryDarkColor"</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

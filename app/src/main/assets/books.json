@@ -1,0 +1,41 @@
+[
+    {
+        "name" : "Will",
+        "author" : "Will Smith with Mark Manson",
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484682/Buku/WillBook_v2tc5h.jpg",
+        "details":"",
+        "condition": "",
+        "location" : "Bogota",
+        "postedBy": ""
+    },
+
+    {
+        "name" : "One Hundred Years of Solitude",
+        "author" : "Gabriel Garcia Marquez",
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484782/Buku/100years_ux0zcd.jpg",
+        "details":"",
+        "condition": "",
+        "location" : "Suba",
+        "postedBy": ""
+    },
+
+    {
+        "name" : "Eat Pray Love",
+        "author" : "Elizabeth Gilbert",
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484840/Buku/eatPrayLove_xy0t0j.jpg",
+        "details":"",
+        "condition": "",
+        "location" : "Cali",
+        "postedBy": ""
+    },
+
+    {
+       "name" : "The Subtle Art of Not Giving a F*ck",
+        "author" : "Mark Manson",
+        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484902/Buku/theSubtleArt_uknwk8.jpg",
+        "details":"",
+        "condition": "",
+        "location" : "Bogota",
+        "postedBy": ""
+    }
+]
