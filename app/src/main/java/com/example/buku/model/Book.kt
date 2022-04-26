@@ -8,10 +8,16 @@ data class Book(
     val name: String,
     @SerializedName("author")
     val author: String,
+    @SerializedName("imageUrl")
+    val imageUrl: String,
+    @SerializedName("details")
+    val details: String,
+    @SerializedName("condition")
+    val condition: String,
     @SerializedName("location")
     val location: String,
-    @SerializedName("imageUrl")
-    val imageUrl: String
+    @SerializedName("postedBy")
+    val postedBy: String,
 ) : Serializable
 
 //

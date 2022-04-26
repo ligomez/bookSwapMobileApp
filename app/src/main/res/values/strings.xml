@@ -18,8 +18,17 @@
     <string name="bt_forgot_password">Forgot your password?</string>
     <string name="tv_welcome">Welcome</string>
     <string name="book_image">Imagen de libro</string>
-    <string name="comer_rezar_amar">Comer Rezar Amar</string>
+    <string name="eat_pray_love">Eat Pray Love</string>
     <string name="elizabeth_gilbert">Elizabeth Gilbert</string>
     <string name="bogota_salitre_plaza">Bogota, Salitre Plaza</string>
     <string name="novels">Novelas</string>
+    <string name="details">Details</string>
+    <string name="condition">Condition</string>
+    <string name="location">Location</string>
+    <string name="posted_by">Posted by</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</string>
+    <string name="used_like_new">Used - Like new</string>
+    <string name="user_name">User name</string>
+    <string name="request_book_swap">Request book swap</string>
+    <string name="bogota">Bogota</string>
 </resources>

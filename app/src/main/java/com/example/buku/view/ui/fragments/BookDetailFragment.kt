@@ -5,41 +5,49 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.buku.databinding.FragmentBookDetailBinding
-import com.example.buku.model.Book
+import com.squareup.picasso.Picasso
 
 class BookDetailFragment : Fragment() {
 
-    private var _binding: FragmentBookDetailBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var detailBinding: FragmentBookDetailBinding
+    private val args: BookDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentBookDetailBinding.inflate(inflater,container,false)
-        var view = binding.root
-        return view
+        detailBinding = FragmentBookDetailBinding.inflate(inflater, container, false)
+        return detailBinding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val books = arguments?.getSerializable("book") as Book
 
-        binding.tvNameBook.text = books.name
-        binding.tvAuthorBook.text = books.author
-        binding.tvLocation.text = books.location
-//        Picasso.get().load(books.imageUrl).into(binding.ivBookImage)
+        val book = args.book
 
-        binding.btVerMas.setOnClickListener {
+        with(detailBinding){
+            tvNameBook.text = book.name
+            tvAuthorBook.text = book.author
+            Picasso.get().load(book.imageUrl).into(ivBookImage)
+            tvBookParagraphDetails.text = book.details
+            tvBookCondition.text = book.condition
+            tvLocation.text = book.location
+            tvUserName.text = book.postedBy
 
         }
+
+//        binding.btVerMas.setOnClickListener {
+//
+//        }
     }
 
+
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
 }

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_favouritesFragment"
             app:destination="@id/navFavouritesFragment" />
+        <action
+            android:id="@+id/action_navHomeFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/navFavouritesFragment"
@@ -50,10 +53,15 @@
         android:name="com.example.buku.view.ui.fragments.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" />
-    <dialog
-        android:id="@+id/bookDetailDialogFragment"
+    <fragment
+        android:id="@+id/bookDetailFragment"
         android:name="com.example.buku.view.ui.fragments.BookDetailFragment"
-        android:label="BookDetailDialogFragment" />
+        android:label="BookDetailFragment"
+        tools:layout="@layout/fragment_book_detail">
+        <argument
+            android:name="book"
+            app:argType="com.example.buku.model.Book" />
+    </fragment>
 
 
 </navigation>

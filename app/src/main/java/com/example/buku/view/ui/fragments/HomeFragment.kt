@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buku.R
+import com.example.buku.databinding.FragmentHomeBinding
 import com.example.buku.model.Book
 import com.example.buku.model.BookList
 import com.example.buku.model.Category
@@ -20,9 +22,9 @@ import com.google.gson.Gson
 
 class HomeFragment : Fragment() {
 
+    private lateinit var homeBinding: FragmentHomeBinding
     private lateinit var listBooks: ArrayList<Book>
     private lateinit var booksAdapter: BooksAdapter
-    private lateinit var booksRecyclerView: RecyclerView
 
     private lateinit var listCategories: ArrayList<Category>
     private lateinit var categoriesAdapter: CategoriesAdapter
@@ -33,19 +35,19 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        return homeBinding.root
     }
 
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
 
-        booksRecyclerView = requireView().findViewById(R.id.rvBooksHome)
         listBooks = loadMockBooksFromJason()
         booksAdapter = BooksAdapter(listBooks, onItemClicked = { onBookClicked(it)})
 
-        booksRecyclerView.apply {
-            layoutManager = LinearLayoutManager(activity)
+        homeBinding.rvBooksHome.apply {
+            layoutManager = LinearLayoutManager(context)
             adapter = booksAdapter
             setHasFixedSize(false)
         }
@@ -62,15 +64,15 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun onBookClicked(book: Book) {
-        Log.d("name", book.name)
 
+    private fun onBookClicked(book: Book) {
+        findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToBookDetailFragment(book))
     }
 
 
     private fun loadMockBooksFromJason(): ArrayList<Book> {
         val booksString: String =
-            activity?.applicationContext?.assets?.open("books.json")?.bufferedReader()
+            context?.assets?.open("books.json")?.bufferedReader()
                 .use { it!!.readText() }
         val gson = Gson()
         return gson.fromJson(booksString, BookList::class.java)
