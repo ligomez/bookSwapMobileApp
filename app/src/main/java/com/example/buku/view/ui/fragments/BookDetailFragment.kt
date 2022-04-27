@@ -7,12 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.buku.databinding.FragmentBookDetailBinding
+import com.example.buku.view.ui.activities.MainActivity
 import com.squareup.picasso.Picasso
 
 class BookDetailFragment : Fragment() {
 
     private lateinit var detailBinding: FragmentBookDetailBinding
     private val args: BookDetailFragmentArgs by navArgs()
+
+    //Show top left arrow to go back in the pile
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity as MainActivity?)?.showIcon()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

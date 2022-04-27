@@ -17,6 +17,7 @@ import com.example.buku.model.Category
 import com.example.buku.model.CategoryList
 import com.example.buku.view.adapter.BooksAdapter
 import com.example.buku.view.adapter.CategoriesAdapter
+import com.example.buku.view.ui.activities.MainActivity
 import com.google.gson.Gson
 
 
@@ -30,6 +31,7 @@ class HomeFragment : Fragment() {
     private lateinit var categoriesAdapter: CategoriesAdapter
     private lateinit var categoriesRecyclerView: RecyclerView
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,6 +44,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
+        //Hide top left arrow to go back in the pile
+        (activity as MainActivity?)?.hideIcon()
 
         listBooks = loadMockBooksFromJason()
         booksAdapter = BooksAdapter(listBooks, onItemClicked = { onBookClicked(it)})
@@ -50,6 +54,7 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = booksAdapter
             setHasFixedSize(false)
+
         }
 
 
