@@ -50,12 +50,12 @@ class MyBooksFragment : Fragment(), BooksListener {
 
 //        booksAdapter = BooksAdapter(this)
 
-        binding.rvBooks.apply {
-            layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL,
-                false)
-
-            adapter = booksAdapter
-        }
+//        binding.rvBooks.apply {
+//            layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL,
+//                false)
+//
+//            adapter = booksAdapter
+//        }
 
         observeViewModel()
     }
@@ -66,10 +66,10 @@ class MyBooksFragment : Fragment(), BooksListener {
 //            booksAdapter.updateData(books)
 //        })
 
-        orderViewModel.isLoading.observe(viewLifecycleOwner, Observer<Boolean> {
-            if (it != null)
-                binding.rlBaseMyBooks.visibility = View.INVISIBLE
-        })
+//        orderViewModel.isLoading.observe(viewLifecycleOwner, Observer<Boolean> {
+//            if (it != null)
+//                binding.rlBaseMyBooks.visibility = View.INVISIBLE
+//        })
     }
 
     override fun onBooksClick(book: Book, position: Int) {

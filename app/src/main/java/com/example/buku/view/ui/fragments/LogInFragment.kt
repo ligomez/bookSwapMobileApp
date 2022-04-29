@@ -5,18 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.example.buku.R
+import com.example.buku.databinding.FragmentLogInBinding
+import com.example.buku.view.ui.activities.MainActivity
+
 
 class LogInFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var logInBinding: FragmentLogInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
+        (activity as MainActivity?)?.showIcon()
     }
 
     override fun onCreateView(
@@ -24,8 +26,23 @@ class LogInFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_log_in, container, false)
+        logInBinding = FragmentLogInBinding.inflate(inflater, container, false)
+        return logInBinding.root
     }
+
+
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+        val btSignUpLogIn: Button = itemView.findViewById(R.id.btSignUpLogin)
+        btSignUpLogIn.setOnClickListener { onSignUpButtonClicked() }
+
+    }
+
+    private fun onSignUpButtonClicked() {
+        findNavController().navigate(LogInFragmentDirections.actionNavAccountFragmentToSignUpFragment())
+
+    }
+
 
 //    // Get input text
 //    val inputText = tilLoginUsername.editText?.text.toString()
