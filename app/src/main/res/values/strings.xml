@@ -31,4 +31,16 @@
     <string name="user_name">User name</string>
     <string name="request_book_swap">Request book swap</string>
     <string name="bogota">Bogota</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="self_help">Self help</string>
+    <string name="user_image">User image</string>
+    <string name="dash">-</string>
+    <string name="date">10/11/2021</string>
 </resources>

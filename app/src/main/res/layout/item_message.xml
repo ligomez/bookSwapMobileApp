@@ -12,88 +12,97 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:elevation="4dp"
-        app:cardBackgroundColor="@color/secondaryLightColor"
         app:cardCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
 
             <ImageView
-                android:id="@+id/ivBookImage"
+                android:id="@+id/ivUserPhoto"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:contentDescription="@string/book_image"
-                android:src="@drawable/comer_rezar_amar"
+                android:contentDescription="@string/user_image"
+                android:src="@drawable/ic_baseline_person_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvNameBook"
+                android:id="@+id/tvUserName"
                 style="@style/black_bold_titles"
-                android:layout_width="0dp"
-                android:layout_height="19dp"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/eat_pray_love"
+                android:layout_marginEnd="8dp"
+                android:text="@string/user_name"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
+                app:layout_constraintEnd_toStartOf="@+id/tvdash"
+                app:layout_constraintStart_toEndOf="@+id/ivUserPhoto"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvAuthorBook"
+                android:id="@+id/tvdash"
+                style="@style/black_bold_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/dash"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvNameBook"
+                app:layout_constraintStart_toEndOf="@+id/tvUserName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNameBook"
+                style="@style/gray_bold_subtitles"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:text="@string/eat_pray_love"
+                android:textColor="#757575"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvdash"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMessage"
                 style="@style/black_subtitles"
                 android:layout_width="0dp"
-                android:layout_height="14dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/elizabeth_gilbert"
+                android:text="@string/lorem_ipsum"
                 android:textColor="@color/secondaryTextColor"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
-                app:layout_constraintTop_toBottomOf="@id/tvNameBook" />
+                app:layout_constraintStart_toEndOf="@+id/ivUserPhoto"
+                app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
             <TextView
-                android:id="@+id/tvLocation"
-                style="@style/gray_bold_subtitles"
+                android:id="@+id/tvDate"
+                style="@style/black_subtitles"
                 android:layout_width="0dp"
-                android:layout_height="14dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/bogota_salitre_plaza"
-                android:textColor="#757575"
-                android:textSize="12sp"
+                android:text="@string/date"
+                android:textColor="@color/secondaryDarkColor"
+                android:textSize="11sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ivBookImage"
-                app:layout_constraintTop_toBottomOf="@+id/tvAuthorBook" />
-
-<!--            <Button-->
-<!--                android:id="@+id/btVerMas"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="48dp"-->
-<!--                android:layout_marginEnd="16dp"-->
-<!--                android:text="@string/btnVerMas"-->
-<!--                android:textColor="@color/primaryTextColor"-->
-<!--                android:textSize="11sp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toEndOf="@+id/tvAuthorBook"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/tvNameBook" />-->
+                app:layout_constraintStart_toEndOf="@+id/ivUserPhoto"
+                app:layout_constraintTop_toBottomOf="@id/tvMessage" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

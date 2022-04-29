@@ -24,12 +24,12 @@ import com.google.gson.Gson
 class HomeFragment : Fragment() {
 
     private lateinit var homeBinding: FragmentHomeBinding
+
     private lateinit var listBooks: ArrayList<Book>
     private lateinit var booksAdapter: BooksAdapter
 
     private lateinit var listCategories: ArrayList<Category>
     private lateinit var categoriesAdapter: CategoriesAdapter
-    private lateinit var categoriesRecyclerView: RecyclerView
 
 
     override fun onCreateView(
@@ -54,15 +54,12 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = booksAdapter
             setHasFixedSize(false)
-
         }
 
-
-        categoriesRecyclerView = requireView().findViewById(R.id.rvCategoriesHome)
         listCategories = loadMockCategoriesFromJason()
-        categoriesAdapter = CategoriesAdapter(listCategories)
+        categoriesAdapter = CategoriesAdapter(listCategories, onItemClicked = { onCategoryClicked(it)})
 
-        categoriesRecyclerView.apply {
+        homeBinding.rvCategoriesHome.apply {
             layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
             adapter = categoriesAdapter
             setHasFixedSize(false)
@@ -72,6 +69,11 @@ class HomeFragment : Fragment() {
 
     private fun onBookClicked(book: Book) {
         findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToBookDetailFragment(book))
+    }
+
+
+    private fun onCategoryClicked(category: Category) {
+        findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToCategoryDetailFragment(category))
     }
 
 

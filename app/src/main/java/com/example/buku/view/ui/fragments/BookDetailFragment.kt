@@ -45,6 +45,7 @@ class BookDetailFragment : Fragment() {
             tvLocation.text = book.location
             tvUserName.text = book.postedBy
 
+
         }
 
 //        binding.btVerMas.setOnClickListener {

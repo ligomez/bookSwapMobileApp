@@ -25,80 +25,85 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etLoginUsername"
+        android:id="@+id/tilLoginUsername"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="@string/hint_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvBienvenido"
         android:layout_margin="16dp"
-        app:startIconDrawable="@drawable/ic_baseline_person_24"
-        >
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColorHint="#616161" />
+            android:textColorHint="@color/secondaryDarkColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etLoginPassword"
+        android:id="@+id/tilLoginPassword"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_margin="12dp"
         android:inputType="textPassword"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
         android:hint="@string/hint_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etLoginUsername"
+        app:layout_constraintTop_toBottomOf="@id/tilLoginUsername"
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:textColorHint="#616161" />
+            android:textColorHint="@color/secondaryDarkColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="304dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="@string/button_login"
         android:layout_margin="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etLoginPassword"/>
+        app:layout_constraintTop_toBottomOf="@id/tilLoginPassword"/>
 
     <TextView
         android:id="@+id/tvLoginNewAccountQuestion"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
         android:padding="7dp"
         android:text="@string/tv_no_account"
         android:textAlignment="textEnd"
-        app:layout_constraintEnd_toStartOf="@id/btLoginCreateAccount"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/buttonLogin"
+        app:layout_constraintEnd_toStartOf="@id/btSignUpLogin"
         app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
 
     <Button
-        android:id="@+id/btLoginCreateAccount"
+        android:id="@+id/btSignUpLogin"
         style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/bt_create_account"
         android:textAlignment="textStart"
         android:gravity="start"
         android:textAllCaps="false"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/buttonLogin"
         app:layout_constraintStart_toEndOf="@id/tvLoginNewAccountQuestion"
         app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
 
@@ -110,9 +115,10 @@
         android:text="@string/bt_forgot_password"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#757575"
+        android:textStyle="bold"
+        android:textColor="@color/primaryColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btLoginCreateAccount" />
+        app:layout_constraintTop_toBottomOf="@id/btSignUpLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

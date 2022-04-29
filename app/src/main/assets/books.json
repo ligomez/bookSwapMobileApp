@@ -6,7 +6,8 @@
         "details":"",
         "condition": "",
         "location" : "Bogota",
-        "postedBy": ""
+        "postedBy": "",
+        "category": "Self Help"
     },
 
     {
@@ -16,7 +17,8 @@
         "details":"",
         "condition": "",
         "location" : "Suba",
-        "postedBy": ""
+        "postedBy": "",
+        "category": "Science"
     },
 
     {
@@ -26,7 +28,8 @@
         "details":"",
         "condition": "",
         "location" : "Cali",
-        "postedBy": ""
+        "postedBy": "",
+        "category": "Romance"
     },
 
     {
@@ -36,6 +39,7 @@
         "details":"",
         "condition": "",
         "location" : "Bogota",
-        "postedBy": ""
+        "postedBy": "",
+        "category": "Self Help"
     }
 ]

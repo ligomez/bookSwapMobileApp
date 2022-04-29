@@ -18,6 +18,8 @@ data class Book(
     val location: String,
     @SerializedName("postedBy")
     val postedBy: String,
+    @SerializedName("category")
+    val category: String,
 ) : Serializable
 
 //
