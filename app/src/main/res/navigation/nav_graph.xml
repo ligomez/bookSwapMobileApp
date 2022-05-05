@@ -19,9 +19,6 @@
         <action
             android:id="@+id/action_navHomeFragment_to_categoryDetailFragment"
             app:destination="@id/categoryDetailFragment" />
-        <action
-            android:id="@+id/action_navHomeFragment_to_bookPostFormFragment"
-            app:destination="@id/bookPostFormFragment" />
     </fragment>
     <fragment
         android:id="@+id/navFavouritesFragment"
@@ -29,20 +26,17 @@
         android:label="fragment_favourites"
         tools:layout="@layout/fragment_favourites" >
         <action
-            android:id="@+id/action_favouritesFragment_to_myBooksFragment"
-            app:destination="@id/navMyBooksFragment" />
+            android:id="@+id/action_navFavouritesFragment_to_navNewPostFragment"
+            app:destination="@id/navNewPostFragment" />
     </fragment>
     <fragment
-        android:id="@+id/navMyBooksFragment"
-        android:name="com.example.buku.view.ui.fragments.MyBooksFragment"
-        android:label="fragment_my_books"
-        tools:layout="@layout/fragment_my_books" >
+        android:id="@+id/navNewPostFragment"
+        android:name="com.example.buku.view.ui.fragments.NewPostFragment"
+        android:label="fragment_new_post"
+        tools:layout="@layout/fragment_new_post" >
         <action
-            android:id="@+id/action_myBooksFragment_to_messagesFragment"
+            android:id="@+id/action_navNewPostFragment_to_navMessagesFragment"
             app:destination="@id/navMessagesFragment" />
-        <action
-            android:id="@+id/action_navMyBooksFragment_to_bookDetailFragmentDialog"
-            app:destination="@+id/bookDetailDialogFragment"/>
     </fragment>
     <fragment
         android:id="@+id/navMessagesFragment"
@@ -89,11 +83,6 @@
             android:id="@+id/action_signUpFragment_to_fragmentProfile"
             app:destination="@id/fragmentProfile" />
     </fragment>
-    <fragment
-        android:id="@+id/bookPostFormFragment"
-        android:name="com.example.buku.view.ui.fragments.BookPostFormFragment"
-        android:label="fragment_book_post_form"
-        tools:layout="@layout/fragment_book_post_form" />
     <fragment
         android:id="@+id/categoryDetailFragment"
         android:name="com.example.buku.view.ui.fragments.CategoryDetailFragment"

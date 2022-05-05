@@ -114,12 +114,12 @@
         android:text="@string/already_have_an_account"
         android:textAlignment="textEnd"
         app:layout_constraintStart_toStartOf="@id/buttonSignUp"
-        app:layout_constraintEnd_toStartOf="@id/btLoginCreateAccount"
+        app:layout_constraintEnd_toStartOf="@id/btSignInCreateAccount"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <Button
-        android:id="@+id/btLoginCreateAccount"
+        android:id="@+id/btSignInCreateAccount"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
