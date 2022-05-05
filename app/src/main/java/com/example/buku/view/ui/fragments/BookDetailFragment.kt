@@ -36,7 +36,7 @@ class BookDetailFragment : Fragment() {
 
         val book = args.book
 
-        with(detailBinding){
+        with(detailBinding) {
             tvNameBook.text = book.name
             tvAuthorBook.text = book.author
             Picasso.get().load(book.imageUrl).into(ivBookImage)
@@ -45,17 +45,7 @@ class BookDetailFragment : Fragment() {
             tvLocation.text = book.location
             tvUserName.text = book.postedBy
 
-
         }
 
-//        binding.btVerMas.setOnClickListener {
-//
-//        }
     }
-
-
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
 }

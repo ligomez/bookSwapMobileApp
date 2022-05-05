@@ -1,29 +1,27 @@
 package com.example.buku.view.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.buku.R
 import com.example.buku.databinding.FragmentHomeBinding
 import com.example.buku.model.Book
-import com.example.buku.model.BookList
 import com.example.buku.model.Category
-import com.example.buku.model.CategoryList
 import com.example.buku.view.adapter.BooksAdapter
 import com.example.buku.view.adapter.CategoriesAdapter
 import com.example.buku.view.ui.activities.MainActivity
-import com.google.gson.Gson
+import com.example.buku.viewmodel.HomeViewModel
 
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeBinding: FragmentHomeBinding
+    private val homeViewModel: HomeViewModel by viewModels()
 
     private lateinit var listBooks: ArrayList<Book>
     private lateinit var booksAdapter: BooksAdapter
@@ -38,6 +36,10 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        // Communicates Fragment with ViewModel if I don't add by viewModels()
+//        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
         return homeBinding.root
     }
 
@@ -47,21 +49,28 @@ class HomeFragment : Fragment() {
         //Hide top left arrow to go back in the pile
         (activity as MainActivity?)?.hideIcon()
 
-        listBooks = loadMockBooksFromJason()
-        booksAdapter = BooksAdapter(listBooks, onItemClicked = { onBookClicked(it)})
+        homeViewModel.loadMockBooksFromJason(context?.assets?.open("books.json"))
 
-        homeBinding.rvBooksHome.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = booksAdapter
-            setHasFixedSize(false)
+        homeViewModel.onBooksLoaded.observe(viewLifecycleOwner) { result ->
+            onBooksLoadedSubscribe(result)
         }
 
-        listCategories = loadMockCategoriesFromJason()
+        listCategories = context?.let { homeViewModel.loadMockCategoriesFromJason(it) }!!
         categoriesAdapter = CategoriesAdapter(listCategories, onItemClicked = { onCategoryClicked(it)})
 
         homeBinding.rvCategoriesHome.apply {
             layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
             adapter = categoriesAdapter
+            setHasFixedSize(false)
+        }
+    }
+
+    private fun onBooksLoadedSubscribe(listBooks: ArrayList<Book>?) {
+        booksAdapter = BooksAdapter(listBooks!!, onItemClicked = { onBookClicked(it)})
+
+        homeBinding.rvBooksHome.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = booksAdapter
             setHasFixedSize(false)
         }
     }
@@ -76,21 +85,4 @@ class HomeFragment : Fragment() {
         findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToCategoryDetailFragment(category))
     }
 
-
-    private fun loadMockBooksFromJason(): ArrayList<Book> {
-        val booksString: String =
-            context?.assets?.open("books.json")?.bufferedReader()
-                .use { it!!.readText() }
-        val gson = Gson()
-        return gson.fromJson(booksString, BookList::class.java)
-    }
-
-
-    private fun loadMockCategoriesFromJason(): ArrayList<Category> {
-        val categoriesString: String =
-            activity?.applicationContext?.assets?.open("categories.json")?.bufferedReader()
-                .use { it!!.readText() }
-        val gson = Gson()
-        return gson.fromJson(categoriesString, CategoryList::class.java)
-    }
 }
