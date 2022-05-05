@@ -8,10 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buku.R
 import com.example.buku.model.Category
+import com.example.buku.model.CategoryList
 import com.squareup.picasso.Picasso
 
 class CategoriesAdapter (
-    private val categoriesList: ArrayList<Category>
+    private val categoriesList: ArrayList<Category>,
+    private val onItemClicked: (Category) -> Unit
         ): RecyclerView.Adapter<CategoriesAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,10 +23,12 @@ class CategoriesAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = categoriesList[position]
+        holder.itemView.setOnClickListener { onItemClicked(categoriesList[position])}
         holder.bind(category)
     }
 
     override fun getItemCount(): Int = categoriesList.size
+
 
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
