@@ -1,53 +1,52 @@
-[
+{
+  "books": [
     {
-        "name" : "Will",
-        "author" : "Will Smith with Mark Manson",
-        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484682/Buku/WillBook_v2tc5h.jpg",
-        "details":"",
-        "condition": "",
-        "location" : "Bogota",
-        "postedBy": "",
-        "category": "Self Help",
-        "latitude": 4.6601133,
-        "longitude": -74.1108312
+      "name": "Will",
+      "author": "Will Smith with Mark Manson",
+      "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650484682/Buku/WillBook_v2tc5h.jpg",
+      "details": "",
+      "condition": "",
+      "location": "Bogota",
+      "postedBy": "",
+      "category": "Self Help",
+      "latitude": 4.6601133,
+      "longitude": -74.1108312
     },
-
     {
-        "name" : "One Hundred Years of Solitude",
-        "author" : "Gabriel Garcia Marquez",
-        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484782/Buku/100years_ux0zcd.jpg",
-        "details":"",
-        "condition": "",
-        "location" : "Suba",
-        "postedBy": "",
-        "category": "Science",
-        "latitude": 4.7122582,
-        "longitude": -74.0717908
+      "name": "One Hundred Years of Solitude",
+      "author": "Gabriel Garcia Marquez",
+      "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650484782/Buku/100years_ux0zcd.jpg",
+      "details": "",
+      "condition": "",
+      "location": "Suba",
+      "postedBy": "",
+      "category": "Science",
+      "latitude": 4.7122582,
+      "longitude": -74.0717908
     },
-
     {
-        "name" : "Eat Pray Love",
-        "author" : "Elizabeth Gilbert",
-        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484840/Buku/eatPrayLove_xy0t0j.jpg",
-        "details":"",
-        "condition": "",
-        "location" : "Cali",
-        "postedBy": "",
-        "category": "Romance",
-        "latitude": 3.4542297,
-        "longitude": -76.5073936
+      "name": "Eat Pray Love",
+      "author": "Elizabeth Gilbert",
+      "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650484840/Buku/eatPrayLove_xy0t0j.jpg",
+      "details": "",
+      "condition": "",
+      "location": "Cali",
+      "postedBy": "",
+      "category": "Romance",
+      "latitude": 3.4542297,
+      "longitude": -76.5073936
     },
-
     {
-       "name" : "The Subtle Art of Not Giving a F*ck",
-        "author" : "Mark Manson",
-        "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484902/Buku/theSubtleArt_uknwk8.jpg",
-        "details":"",
-        "condition": "",
-        "location" : "Medellin",
-        "postedBy": "",
-        "category": "Self Help",
-        "latitude": 6.2573421,
-        "longitude": -75.6153402
+      "name": "The Subtle Art of Not Giving a F*ck",
+      "author": "Mark Manson",
+      "imageUrl": "https://res.cloudinary.com/dag5touxx/image/upload/v1650484902/Buku/theSubtleArt_uknwk8.jpg",
+      "details": "",
+      "condition": "",
+      "location": "Medellin",
+      "postedBy": "",
+      "category": "Self Help",
+      "latitude": 6.2573421,
+      "longitude": -75.6153402
     }
-]
+  ]
+}

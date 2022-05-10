@@ -61,7 +61,6 @@ class BookDetailFragment : Fragment() {
             tvBookCondition.text = book.condition
             tvLocation.text = book.location
             tvUserName.text = book.postedBy
-
         }
 
         // Setting location map
