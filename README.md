@@ -6,4 +6,4 @@ Check current status on develop branch.
 
 ![image](https://user-images.githubusercontent.com/83715511/161304552-88eac5c4-4b43-4662-a320-98d332308a75.png)
 
-"Icon in the app made by Freepik from www.flaticon.com"
+"Icons in the app made by Freepik from www.flaticon.com"
