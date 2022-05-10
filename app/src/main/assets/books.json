@@ -7,7 +7,9 @@
         "condition": "",
         "location" : "Bogota",
         "postedBy": "",
-        "category": "Self Help"
+        "category": "Self Help",
+        "latitude": 4.6601133,
+        "longitude": -74.1108312
     },
 
     {
@@ -18,7 +20,9 @@
         "condition": "",
         "location" : "Suba",
         "postedBy": "",
-        "category": "Science"
+        "category": "Science",
+        "latitude": 4.7122582,
+        "longitude": -74.0717908
     },
 
     {
@@ -29,7 +33,9 @@
         "condition": "",
         "location" : "Cali",
         "postedBy": "",
-        "category": "Romance"
+        "category": "Romance",
+        "latitude": 3.4542297,
+        "longitude": -76.5073936
     },
 
     {
@@ -38,8 +44,10 @@
         "imageUrl" : "https://res.cloudinary.com/dag5touxx/image/upload/v1650484902/Buku/theSubtleArt_uknwk8.jpg",
         "details":"",
         "condition": "",
-        "location" : "Bogota",
+        "location" : "Medellin",
         "postedBy": "",
-        "category": "Self Help"
+        "category": "Self Help",
+        "latitude": 6.2573421,
+        "longitude": -75.6153402
     }
 ]

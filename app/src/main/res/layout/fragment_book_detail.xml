@@ -119,6 +119,13 @@
                     android:layout_marginBottom="8dp"
                     android:text="@string/bogota" />
 
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+
                 <TextView
                     style="@style/black_bold_titles"
                     android:layout_width="match_parent"
