@@ -20,6 +20,10 @@ data class Book(
     val postedBy: String,
     @SerializedName("category")
     val category: String,
+    @SerializedName("latitude")
+    val latitude: Double,
+    @SerializedName("longitude")
+    val longitude: Double,
 ) : Serializable
 
 //

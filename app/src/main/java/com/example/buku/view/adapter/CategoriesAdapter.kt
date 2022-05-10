@@ -30,6 +30,12 @@ class CategoriesAdapter (
     override fun getItemCount(): Int = categoriesList.size
 
 
+    fun appendItems(newItems: ArrayList<Category>) {
+        categoriesList.clear()
+        categoriesList.addAll(newItems)
+        notifyDataSetChanged()
+    }
+
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var tvCategoryName: TextView = itemView.findViewById(R.id.tvCategoryName)
