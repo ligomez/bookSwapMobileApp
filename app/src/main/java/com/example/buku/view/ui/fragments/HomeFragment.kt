@@ -49,7 +49,10 @@ class HomeFragment : Fragment() {
         //Hide top left arrow to go back in the pile
         (activity as MainActivity?)?.hideIcon()
 
-        homeViewModel.loadMockBooksFromJason(context?.assets?.open("books.json"))
+//        homeViewModel.loadMockBooksFromJason(context?.assets?.open("books.json"))
+
+        homeViewModel.getBooksFromServer()
+
         homeViewModel.onBooksLoaded.observe(viewLifecycleOwner) { result ->
             onBooksLoadedSubscribe(result)
         }

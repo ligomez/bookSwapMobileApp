@@ -3,11 +3,15 @@ package com.example.buku.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.buku.data.BooksRepository
 import com.example.buku.model.Book
 import com.example.buku.model.BookList
 import com.example.buku.model.Category
 import com.example.buku.model.CategoryList
 import com.google.gson.Gson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.io.InputStream
 
 class HomeViewModel: ViewModel() {
@@ -17,6 +21,14 @@ class HomeViewModel: ViewModel() {
 
     private val categoriesLoad: MutableLiveData<ArrayList<Category>> = MutableLiveData()
     val onCategoriesLoaded: LiveData<ArrayList<Category>> = categoriesLoad
+
+    private val repository = BooksRepository()
+
+    fun getBooksFromServer(){
+        GlobalScope.launch(Dispatchers.IO) {
+            booksLoad.postValue(repository.getBooks())
+        }
+    }
 
 
     fun loadMockBooksFromJason(booksString: InputStream?) {

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.buku.R
 import com.example.buku.databinding.FragmentBookDetailBinding
+import com.example.buku.model.Book
 import com.example.buku.view.ui.activities.MainActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -19,9 +20,10 @@ class BookDetailFragment : Fragment() {
 
     private lateinit var detailBinding: FragmentBookDetailBinding
     private val args: BookDetailFragmentArgs by navArgs()
+    private lateinit var book: Book
 
     private val callback = OnMapReadyCallback { googleMap ->
-        val book = args.book
+        book = args.book
         val latitude = book.latitude
         val longitude = book.longitude
         val mapLocation = com.google.android.gms.maps.model.LatLng(latitude, longitude)
@@ -51,7 +53,7 @@ class BookDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val book = args.book
+        book = args.book
 
         with(detailBinding) {
             tvNameBook.text = book.name
