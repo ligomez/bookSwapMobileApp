@@ -9,6 +9,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.buku.R
 import com.example.buku.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 

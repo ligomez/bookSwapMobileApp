@@ -28,7 +28,33 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         loginBinding = FragmentLoginBinding.inflate(inflater, container, false)
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+
+        loginViewModel.onUserLoggedin.observe(viewLifecycleOwner) { result ->
+            onUserLoggedinSubscribe(result)
+        }
+
+        loginViewModel.onUserLoginChecked.observe(viewLifecycleOwner) { result ->
+            onUserLoggedinCheckedSubscribe(result)
+        }
+
         return loginBinding.root
+    }
+
+    private fun onUserLoggedinCheckedSubscribe(result: Boolean?) {
+        result?.let { isUserLoggedinChecked ->
+            if (isUserLoggedinChecked)
+                findNavController().navigate(LoginFragmentDirections.actionNavAccountFragmentToFragmentProfile())
+        }
+    }
+
+
+    private fun onUserLoggedinSubscribe(result: Boolean?) {
+        result?.let { isLoggedin ->
+            if (isLoggedin) {
+                findNavController().navigate(LoginFragmentDirections.actionNavAccountFragmentToFragmentProfile())
+            } else
+                Toast.makeText(context, "Log in unsuccessful, please try again later", Toast.LENGTH_SHORT).show()
+        }
     }
 
 
@@ -50,25 +76,23 @@ class LoginFragment : Fragment() {
                     else
                         loginViewModel.login(email, password)
             }
+
+            btSignUpLogin.setOnClickListener { onSignUpButtonClicked() }
+
+            (activity as MainActivity?)?.hideIcon()
         }
 
-        val btSignUpLogIn: Button = itemView.findViewById(R.id.btSignUpLogin)
-        btSignUpLogIn.setOnClickListener { onSignUpButtonClicked() }
-        (activity as MainActivity?)?.hideIcon()
+        checkUserLoggedin()
+    }
+
+
+    private fun checkUserLoggedin() {
+        loginViewModel.checkUserLoggedin()
     }
 
 
     private fun onSignUpButtonClicked() {
         findNavController().navigate(LoginFragmentDirections.actionNavAccountFragmentToSignUpFragment())
-
     }
-
 }
 
-
-//    // Get input text
-//    val inputText = tilLoginUsername.editText?.text.toString()
-//
-//    tilLoginUsername.editText?.doOnTextChanged { inputText, _, _, _ ->
-//        // Respond to input text change
-//    }

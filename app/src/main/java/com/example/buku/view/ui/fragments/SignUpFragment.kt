@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -31,11 +32,36 @@ class SignUpFragment : Fragment() {
         // Inflate the layout for this fragment
         signUpBinding = FragmentSignUpBinding.inflate(inflater, container, false)
         signUpViewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
+
+        signUpViewModel.onUserCreated.observe(viewLifecycleOwner) { result ->
+            onUserCreatedSubscribe(result)
+        }
+
         return signUpBinding.root
+    }
+
+    private fun onUserCreatedSubscribe(result: Boolean?) {
+        result?.let { isRegistered->
+            if (isRegistered) {
+                Toast.makeText(context, "Register successful", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToNavLoginFragment())
+            } else
+                Toast.makeText(context, "Register unsuccessful", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        with(signUpBinding) {
+            buttonSignUp.setOnClickListener {
+                val email = emailEditText.text.toString()
+                val name = nameEditText.text.toString()
+                val password = passwordEditText.text.toString()
+
+                signUpViewModel.signUp(email, password)
+            }
+        }
     }
 
 //    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {

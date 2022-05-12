@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.buku.R
 import com.example.buku.databinding.FragmentHomeBinding
 import com.example.buku.model.Book
 import com.example.buku.model.Category
@@ -17,7 +16,6 @@ import com.example.buku.view.adapter.BooksAdapter
 import com.example.buku.view.adapter.CategoriesAdapter
 import com.example.buku.view.ui.activities.MainActivity
 import com.example.buku.viewmodel.HomeViewModel
-import com.google.android.gms.maps.SupportMapFragment
 
 
 class HomeFragment : Fragment() {
