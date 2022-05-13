@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
@@ -49,7 +49,9 @@ class HomeFragment : Fragment() {
 
 //        homeViewModel.loadMockBooksFromJason(context?.assets?.open("books.json"))
 
-        homeViewModel.getBooksFromServer()
+//        homeViewModel.getBooksFromServer()
+
+        homeViewModel.getBooksFromFirebase()
 
         homeViewModel.onBooksLoaded.observe(viewLifecycleOwner) { result ->
             onBooksLoadedSubscribe(result)

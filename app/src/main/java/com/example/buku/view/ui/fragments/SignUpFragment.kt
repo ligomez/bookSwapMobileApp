@@ -20,6 +20,9 @@ class SignUpFragment : Fragment() {
     private lateinit var signUpBinding: FragmentSignUpBinding
     private lateinit var signUpViewModel: SignUpViewModel
 
+    private lateinit var email: String
+    private lateinit var name: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         (activity as MainActivity?)?.showIcon()
@@ -28,7 +31,7 @@ class SignUpFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         signUpBinding = FragmentSignUpBinding.inflate(inflater, container, false)
         signUpViewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
@@ -44,7 +47,8 @@ class SignUpFragment : Fragment() {
         result?.let { isRegistered->
             if (isRegistered) {
                 Toast.makeText(context, "Register successful", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(SignUpFragmentDirections.actionNavSignUpFragmentToNavProfileFragment())
+                signUpViewModel.createUserAccount(email, name)
+//                findNavController().navigate(SignUpFragmentDirections.actionNavSignUpFragmentToNavProfileFragment())
             } else
                 Toast.makeText(context, "Register unsuccessful", Toast.LENGTH_SHORT).show()
         }
@@ -55,8 +59,8 @@ class SignUpFragment : Fragment() {
 
         with(signUpBinding) {
             buttonSignUp.setOnClickListener {
-                val email = emailEditText.text.toString()
-                val name = nameEditText.text.toString()
+                email = emailEditText.text.toString()
+                name = nameEditText.text.toString()
                 val password = passwordEditText.text.toString()
 
                 signUpViewModel.signUp(email, password)

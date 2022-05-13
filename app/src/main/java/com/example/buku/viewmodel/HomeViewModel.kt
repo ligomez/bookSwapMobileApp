@@ -44,4 +44,11 @@ class HomeViewModel: ViewModel() {
         categoriesLoad.value = gson.fromJson(categoriesString, CategoryList::class.java)
     }
 
+
+    fun getBooksFromFirebase() {
+        GlobalScope.launch(Dispatchers.IO){
+            booksLoad.postValue(repository.getBooksFromFirebase())
+        }
+    }
+
 }
