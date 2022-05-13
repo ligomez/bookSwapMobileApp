@@ -44,7 +44,7 @@ class SignUpFragment : Fragment() {
         result?.let { isRegistered->
             if (isRegistered) {
                 Toast.makeText(context, "Register successful", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToNavLoginFragment())
+                findNavController().navigate(SignUpFragmentDirections.actionNavSignUpFragmentToNavProfileFragment())
             } else
                 Toast.makeText(context, "Register unsuccessful", Toast.LENGTH_SHORT).show()
         }
@@ -61,13 +61,10 @@ class SignUpFragment : Fragment() {
 
                 signUpViewModel.signUp(email, password)
             }
+            buttonSignInCreateAccount.setOnClickListener {
+                findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToNavLoginFragment())
+            }
         }
     }
-
-//    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(itemView, savedInstanceState)
-////        val btSignInCreateAccount: Button = itemView.findViewById(R.id.btSignInCreateAccount)
-////        btSignInCreateAccount.setOnClickListener { onSignInButtonClicked() }
-//    }
 
 }

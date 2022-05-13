@@ -71,10 +71,14 @@
     </fragment>
     <fragment
         android:id="@+id/navProfileFragment"
-        android:name="com.example.buku.view.ui.fragments.FragmentProfile"
+        android:name="com.example.buku.view.ui.fragments.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navProfileFragment_to_navLoginFragment"
+            app:destination="@id/navLoginFragment" />
+    </fragment>
+     <fragment
         android:id="@+id/navSignUpFragment"
         android:name="com.example.buku.view.ui.fragments.SignUpFragment"
         android:label="fragment_sign_up"
@@ -82,7 +86,10 @@
         <action
             android:id="@+id/action_signUpFragment_to_navLoginFragment"
             app:destination="@id/navLoginFragment" />
-    </fragment>
+         <action
+             android:id="@+id/action_navSignUpFragment_to_navProfileFragment"
+             app:destination="@id/navProfileFragment" />
+     </fragment>
     <fragment
         android:id="@+id/categoryDetailFragment"
         android:name="com.example.buku.view.ui.fragments.CategoryDetailFragment"
