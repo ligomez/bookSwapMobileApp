@@ -1,4 +1,4 @@
-package com.example.buku.data
+package com.example.buku.data.repository
 
 import com.example.buku.model.User
 import com.google.firebase.auth.FirebaseAuth

@@ -1,16 +1,13 @@
 package com.example.buku.view.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
-import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.buku.R
 import com.example.buku.databinding.FragmentSignUpBinding
 import com.example.buku.view.ui.activities.MainActivity
 import com.example.buku.viewmodel.SignUpViewModel
@@ -44,7 +41,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun onUserCreatedSubscribe(result: Boolean?) {
-        result?.let { isRegistered->
+        result?.let { isRegistered ->
             if (isRegistered) {
                 Toast.makeText(context, "Register successful", Toast.LENGTH_SHORT).show()
                 signUpViewModel.createUserAccount(email, name)

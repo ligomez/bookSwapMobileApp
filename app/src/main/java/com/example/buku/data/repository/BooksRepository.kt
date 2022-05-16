@@ -1,5 +1,6 @@
-package com.example.buku.data
+package com.example.buku.data.repository
 
+import com.example.buku.data.ApiFactory
 import com.example.buku.model.Book
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
