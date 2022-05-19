@@ -3,7 +3,7 @@ package com.example.buku.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.buku.data.repository.BooksRepository
+import com.example.buku.data.repository.HomeRepository
 import com.example.buku.model.Book
 import com.example.buku.model.BookList
 import com.example.buku.model.Category
@@ -16,7 +16,7 @@ import java.io.InputStream
 
 class HomeViewModel: ViewModel() {
 
-    private val repository = BooksRepository()
+    private val repository = HomeRepository()
 
     private val booksLoad: MutableLiveData<ArrayList<Book>> = MutableLiveData()
     val onBooksLoaded: LiveData<ArrayList<Book>> = booksLoad

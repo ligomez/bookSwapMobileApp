@@ -7,7 +7,7 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
-class BooksRepository {
+class HomeRepository {
 
     suspend fun getBooks() = ApiFactory.retrofit.getBooks()
 

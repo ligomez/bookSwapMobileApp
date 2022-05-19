@@ -33,26 +33,20 @@ class SignUpFragment : Fragment() {
         signUpBinding = FragmentSignUpBinding.inflate(inflater, container, false)
         signUpViewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
 
+        return signUpBinding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         signUpViewModel.onUserCreated.observe(viewLifecycleOwner) { result ->
             onUserCreatedSubscribe(result)
         }
 
-        return signUpBinding.root
-    }
-
-    private fun onUserCreatedSubscribe(result: Boolean?) {
-        result?.let { isRegistered ->
-            if (isRegistered) {
-                Toast.makeText(context, "Register successful", Toast.LENGTH_SHORT).show()
-                signUpViewModel.createUserAccount(email, name)
-//                findNavController().navigate(SignUpFragmentDirections.actionNavSignUpFragmentToNavProfileFragment())
-            } else
-                Toast.makeText(context, "Register unsuccessful", Toast.LENGTH_SHORT).show()
+        signUpViewModel.onUserSignedUp.observe(viewLifecycleOwner) { result ->
+            onUserSignedUpSubscribe(result)
         }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         with(signUpBinding) {
             buttonSignUp.setOnClickListener {
@@ -62,10 +56,23 @@ class SignUpFragment : Fragment() {
 
                 signUpViewModel.signUp(email, password)
             }
+
             buttonSignInCreateAccount.setOnClickListener {
                 findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToNavLoginFragment())
             }
         }
     }
 
+    private fun onUserSignedUpSubscribe(result: String?) {
+        if (result.equals("User successfully registered"))
+            signUpViewModel.createUserAccount(email, name)
+        else
+            Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun onUserCreatedSubscribe(result: String?) {
+        Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
+        if (result.equals("User successfully created"))
+            findNavController().navigate(SignUpFragmentDirections.actionNavSignUpFragmentToNavProfileFragment())
+    }
 }

@@ -27,6 +27,13 @@ class LoginFragment : Fragment() {
         loginBinding = FragmentLoginBinding.inflate(inflater, container, false)
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
+        return loginBinding.root
+    }
+
+
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+
         loginViewModel.onUserLoggedin.observe(viewLifecycleOwner) { result ->
             onUserLoggedinSubscribe(result)
         }
@@ -34,12 +41,6 @@ class LoginFragment : Fragment() {
         loginViewModel.onUserLoginChecked.observe(viewLifecycleOwner) { result ->
             onUserLoggedinCheckedSubscribe(result)
         }
-        return loginBinding.root
-    }
-
-
-    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(itemView, savedInstanceState)
 
         with(loginBinding) {
             buttonLogin.setOnClickListener {
@@ -52,7 +53,7 @@ class LoginFragment : Fragment() {
                 else
                     if (!isEmailValid(email))
                         Toast.makeText(context,
-                            "Please enter right email format",
+                            "Please enter a valid email format",
                             Toast.LENGTH_SHORT)
                             .show()
                     else
@@ -61,7 +62,6 @@ class LoginFragment : Fragment() {
             btSignUpLogin.setOnClickListener { onSignUpButtonClicked() }
             (activity as MainActivity?)?.hideIcon()
         }
-
     }
 
 
@@ -79,14 +79,10 @@ class LoginFragment : Fragment() {
     }
 
 
-    private fun onUserLoggedinSubscribe(result: Boolean?) {
-        result?.let { isLoggedin ->
-            if (isLoggedin) {
+    private fun onUserLoggedinSubscribe(result: String?) {
+        Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
+            if (result.equals("Welcome")) {
                 findNavController().navigate(LoginFragmentDirections.actionNavAccountFragmentToFragmentProfile())
-            } else
-                Toast.makeText(context,
-                    "Log in unsuccessful, please try again later",
-                    Toast.LENGTH_SHORT).show()
         }
     }
 

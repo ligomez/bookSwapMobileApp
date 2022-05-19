@@ -11,22 +11,24 @@ import kotlinx.coroutines.launch
 
 class SignUpViewModel : ViewModel() {
 
-    private var createUser : MutableLiveData<Boolean> = MutableLiveData()
-    val onUserCreated : LiveData<Boolean> = createUser
+    private var userSignUp: MutableLiveData<String> = MutableLiveData()
+    val onUserSignedUp: LiveData<String> = userSignUp
+
+    private var createUser : MutableLiveData<String> = MutableLiveData()
+    val onUserCreated : LiveData<String> = createUser
 
     private val signUpRepository = SignUpRepository()
 
 
     fun signUp(email: String, password: String) {
         GlobalScope.launch(Dispatchers.IO){
-            val result = signUpRepository.createUser(email, password)
+            userSignUp.postValue(signUpRepository.createUser(email, password))
         }
-
     }
 
     fun createUserAccount(email: String, name: String) {
         GlobalScope.launch(Dispatchers.IO){
-            val result = signUpRepository.createUserInDataBase(email, name)
+            createUser.postValue(signUpRepository.createUserInDataBase(email, name))
         }
     }
 }
