@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.buku.R
 import com.example.buku.databinding.FragmentBookDetailBinding
 import com.example.buku.model.Book
 import com.example.buku.view.ui.activities.MainActivity
+import com.example.buku.viewmodel.BookDetailViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -19,6 +21,7 @@ import com.squareup.picasso.Picasso
 class BookDetailFragment : Fragment() {
 
     private lateinit var detailBinding: FragmentBookDetailBinding
+    private val bookDetailViewModel: BookDetailViewModel by viewModels()
     private val args: BookDetailFragmentArgs by navArgs()
     private lateinit var book: Book
 
@@ -52,7 +55,6 @@ class BookDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         book = args.book
 
         with(detailBinding) {
@@ -63,11 +65,15 @@ class BookDetailFragment : Fragment() {
             tvBookCondition.text = book.condition
             tvLocation.text = book.location
             tvUserName.text = book.postedBy
+
+            ivFavorite.setOnClickListener{
+                bookDetailViewModel.saveInFavorites(book)
+            }
+
         }
 
         // Setting location map
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
-
     }
 }

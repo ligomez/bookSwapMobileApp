@@ -50,6 +50,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAuthorBook" />
 
+        <ImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_border"
+            android:layout_below="@id/ivBookImage"
+            app:layout_constraintStart_toEndOf="@id/ivBookImage"
+            app:layout_constraintBottom_toBottomOf="@id/ivBookImage"
+            android:layout_marginStart="8dp" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cvBookDetail"
             android:layout_width="match_parent"
