@@ -24,6 +24,7 @@ class BookDetailFragment : Fragment() {
     private val bookDetailViewModel: BookDetailViewModel by viewModels()
     private val args: BookDetailFragmentArgs by navArgs()
     private lateinit var book: Book
+    private var isFavorite = false
 
     private val callback = OnMapReadyCallback { googleMap ->
         book = args.book
@@ -67,8 +68,14 @@ class BookDetailFragment : Fragment() {
             tvUserName.text = book.postedBy
 
             ivFavorite.setOnClickListener{
-                bookDetailViewModel.saveInFavorites(book)
-                ivFavorite.setImageDrawable(resources.getDrawable(R.drawable.ic_favorite))
+                if (!isFavorite){
+                    bookDetailViewModel.saveInFavorites(book)
+                    ivFavorite.setImageDrawable(resources.getDrawable(R.drawable.ic_favorite))
+                    isFavorite = true
+                } else {
+                    bookDetailViewModel.deleteInFavorite(book)
+                    ivFavorite.setImageDrawable(resources.getDrawable(R.drawable.ic_favorite_border))
+                }
             }
 
         }

@@ -7,14 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.buku.R
-import com.example.buku.model.Book
+import com.example.buku.data.local.BookLocal
 import com.squareup.picasso.Picasso
 
 
-class BooksAdapter(
-    private val booksList: ArrayList<Book>,
-    private val onItemClicked: (Book) -> Unit
-): RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
+class FavoritesAdapter(
+    private val booksList: ArrayList<BookLocal>,
+    private val onItemClicked: (BookLocal) -> Unit,
+) : RecyclerView.Adapter<FavoritesAdapter.ViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -22,19 +23,21 @@ class BooksAdapter(
         return ViewHolder(view)
     }
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = booksList[position]
-        holder.itemView.setOnClickListener { onItemClicked(booksList[position])}
+        holder.itemView.setOnClickListener { onItemClicked(booksList[position]) }
         holder.bind(book)
     }
 
+
     override fun getItemCount(): Int = booksList.size
 
-    fun appendItems(newItems: ArrayList<Book>) {
+
+    fun appendItems(newItems: ArrayList<BookLocal>) {
         booksList.clear()
         booksList.addAll(newItems)
         notifyDataSetChanged()
-
     }
 
 
@@ -44,13 +47,11 @@ class BooksAdapter(
         private var tvLocation: TextView = itemView.findViewById(R.id.tvLocation)
         private var ivBookImage: ImageView = itemView.findViewById(R.id.ivBookImage)
 
-        fun bind(book: Book) {
+        fun bind(book: BookLocal) {
             tvNameBook.text = book.name
             tvAuthorBook.text = book.author
             tvLocation.text = book.location
             Picasso.get().load(book.imageUrl).into(ivBookImage)
-
         }
     }
 }
-

@@ -17,4 +17,11 @@ class BookDetailViewModel : ViewModel() {
             bookDetailRepository.saveInFavorites(book)
         }
     }
+
+    fun deleteInFavorite(book: Book) {
+        GlobalScope.launch(Dispatchers.IO){
+            bookDetailRepository.deleteInFavorite(book)
+        }
+
+    }
 }

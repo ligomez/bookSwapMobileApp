@@ -13,8 +13,8 @@ class FavoritesViewModel : ViewModel() {
 
     private val favoritesRepository = FavoritesRepository()
 
-    private var booksLoad : MutableLiveData<ArrayList<BookLocal>> = MutableLiveData()
-    val onBooksLoaded: LiveData<ArrayList<BookLocal>> = booksLoad
+    private var booksLoad : MutableLiveData<MutableList<BookLocal>> = MutableLiveData()
+    val onBooksLoaded: LiveData<MutableList<BookLocal>> = booksLoad
 
 
     fun getFavoriteBooks() {
