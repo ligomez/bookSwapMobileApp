@@ -11,8 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_favouritesFragment"
-            app:destination="@id/navFavouritesFragment" />
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/navFavoritesFragment" />
         <action
             android:id="@+id/action_navHomeFragment_to_bookDetailFragment"
             app:destination="@id/bookDetailFragment" />
@@ -21,12 +21,12 @@
             app:destination="@id/categoryDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/navFavouritesFragment"
-        android:name="com.example.buku.view.ui.fragments.FavouritesFragment"
-        android:label="fragment_favourites"
-        tools:layout="@layout/fragment_favourites" >
+        android:id="@+id/navFavoritesFragment"
+        android:name="com.example.buku.view.ui.fragments.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
         <action
-            android:id="@+id/action_navFavouritesFragment_to_navNewPostFragment"
+            android:id="@+id/action_navFavoritesFragment_to_navNewPostFragment"
             app:destination="@id/navNewPostFragment" />
     </fragment>
     <fragment

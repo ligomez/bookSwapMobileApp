@@ -68,6 +68,7 @@ class BookDetailFragment : Fragment() {
 
             ivFavorite.setOnClickListener{
                 bookDetailViewModel.saveInFavorites(book)
+                ivFavorite.setImageDrawable(resources.getDrawable(R.drawable.ic_favorite))
             }
 
         }
