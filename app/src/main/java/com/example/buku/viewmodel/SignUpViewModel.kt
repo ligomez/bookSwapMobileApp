@@ -8,7 +8,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
 class SignUpViewModel : ViewModel() {
 
     private var userSignUp: MutableLiveData<String> = MutableLiveData()
@@ -18,7 +17,6 @@ class SignUpViewModel : ViewModel() {
     val onUserCreated : LiveData<String> = createUser
 
     private val signUpRepository = SignUpRepository()
-
 
     fun signUp(email: String, password: String) {
         GlobalScope.launch(Dispatchers.IO){

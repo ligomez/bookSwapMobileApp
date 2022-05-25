@@ -14,14 +14,12 @@ class ProfileFragment : Fragment() {
 
     private lateinit var profileBinding: FragmentProfileBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
 
         profileBinding = FragmentProfileBinding.inflate(inflater, container, false)
-
         return profileBinding.root
     }
 
@@ -39,5 +37,4 @@ class ProfileFragment : Fragment() {
         Firebase.auth.signOut()
         findNavController().navigate(ProfileFragmentDirections.actionNavProfileFragmentToNavLoginFragment())
     }
-
 }

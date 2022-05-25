@@ -17,7 +17,6 @@ import com.example.buku.view.adapter.CategoriesAdapter
 import com.example.buku.view.ui.activities.MainActivity
 import com.example.buku.viewmodel.HomeViewModel
 
-
 class HomeFragment : Fragment() {
 
     private lateinit var homeBinding: FragmentHomeBinding
@@ -29,17 +28,13 @@ class HomeFragment : Fragment() {
     private var listCategories: ArrayList<Category> = arrayListOf()
     private lateinit var categoriesAdapter: CategoriesAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
-
         homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
-
         return homeBinding.root
     }
-
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
@@ -47,17 +42,18 @@ class HomeFragment : Fragment() {
         //Hide top left arrow to go back in the pile
         (activity as MainActivity?)?.hideIcon()
 
-//        homeViewModel.loadMockBooksFromJason(context?.assets?.open("books.json"))
-
-//        homeViewModel.getBooksFromServer()
-
         homeViewModel.getBooksFromFirebase()
+        homeViewModel.getCategoriesFromFirebase()
 
         homeViewModel.onBooksLoaded.observe(viewLifecycleOwner) { result ->
             onBooksLoadedSubscribe(result)
         }
 
-        booksAdapter = BooksAdapter(listBooks, onItemClicked = { onBookClicked(it)})
+        homeViewModel.onCategoriesLoaded.observe(viewLifecycleOwner) { result ->
+            onCategoriesLoadedSubscribe(result)
+        }
+
+        booksAdapter = BooksAdapter(listBooks, onItemClicked = { onBookClicked(it) })
 
         homeBinding.rvBooksHome.apply {
             layoutManager = LinearLayoutManager(context)
@@ -65,21 +61,14 @@ class HomeFragment : Fragment() {
             setHasFixedSize(false)
         }
 
-
-        context?.assets?.let { homeViewModel.loadMockCategoriesFromJason(it.open("categories.json")) }
-        homeViewModel.onCategoriesLoaded.observe(viewLifecycleOwner) {result ->
-            onCategoriesLoadedSubscribe(result)
-        }
-
-        categoriesAdapter = CategoriesAdapter(listCategories, onItemClicked = { onCategoryClicked(it)})
+        categoriesAdapter =
+            CategoriesAdapter(listCategories, onItemClicked = { onCategoryClicked(it) })
 
         homeBinding.rvCategoriesHome.apply {
             layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
             adapter = categoriesAdapter
             setHasFixedSize(false)
         }
-
-
     }
 
     private fun onCategoriesLoadedSubscribe(result: ArrayList<Category>?) {
@@ -94,14 +83,13 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun onBookClicked(book: Book) {
-        findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToBookDetailFragment(book))
+        findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToBookDetailFragment(
+            book))
     }
-
 
     private fun onCategoryClicked(category: Category) {
-        findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToCategoryDetailFragment(category))
+        findNavController().navigate(HomeFragmentDirections.actionNavHomeFragmentToCategoryDetailFragment(
+            category))
     }
-
 }

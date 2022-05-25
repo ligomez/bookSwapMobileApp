@@ -22,9 +22,10 @@ class BookDetailRepository {
             latitude = book.latitude,
             longitude = book.longitude
         )
-        val bookDao : BookDao = Buku.database.BookDao()
+        val bookDao: BookDao = Buku.database.BookDao()
         bookDao.createBook(bookLocal)
     }
+
 
     fun deleteInFavorite(book: Book) {
 
@@ -43,6 +44,5 @@ class BookDetailRepository {
         )
         val bookDao: BookDao = Buku.database.BookDao()
         bookDao.deleteBook(bookLocal)
-
     }
 }

@@ -1,19 +1,16 @@
 package com.example.buku.view.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.buku.R
 import com.example.buku.data.local.BookLocal
 import com.example.buku.databinding.FragmentFavoritesBinding
 import com.example.buku.view.adapter.FavoritesAdapter
 import com.example.buku.viewmodel.FavoritesViewModel
-
 
 class FavoritesFragment : Fragment() {
 
@@ -22,15 +19,13 @@ class FavoritesFragment : Fragment() {
     private lateinit var favoritesAdapter: FavoritesAdapter
     private var favoriteBooksList: ArrayList<BookLocal> = arrayListOf()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         favoritesBinding = FragmentFavoritesBinding.inflate(inflater, container, false)
         return favoritesBinding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,7 +36,8 @@ class FavoritesFragment : Fragment() {
             onBooksLoadedSubscribe(result)
         }
         favoritesAdapter = FavoritesAdapter(favoriteBooksList, onItemClicked = {
-            onFavoriteBookClicked(it)})
+            onFavoriteBookClicked(it)
+        })
 
         favoritesBinding.rvFavorites.apply {
             layoutManager = LinearLayoutManager(context)
@@ -55,12 +51,11 @@ class FavoritesFragment : Fragment() {
     }
 
     private fun onBooksLoadedSubscribe(result: MutableList<BookLocal>?) {
-        result?.let{ listFavoriteBooks ->
+        result?.let { listFavoriteBooks ->
             favoritesAdapter.appendItems(listFavoriteBooks as ArrayList<BookLocal>)
         }
     }
 
-    // Cuando los datos carguen
+// Cuando los datos carguen
 //    favoritesBinding.pbFavorites.visibility = View.INVISIBLE
-
 }

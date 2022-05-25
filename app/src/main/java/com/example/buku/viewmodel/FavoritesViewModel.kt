@@ -13,12 +13,11 @@ class FavoritesViewModel : ViewModel() {
 
     private val favoritesRepository = FavoritesRepository()
 
-    private var booksLoad : MutableLiveData<MutableList<BookLocal>> = MutableLiveData()
+    private var booksLoad: MutableLiveData<MutableList<BookLocal>> = MutableLiveData()
     val onBooksLoaded: LiveData<MutableList<BookLocal>> = booksLoad
 
-
     fun getFavoriteBooks() {
-        GlobalScope.launch(Dispatchers.IO){
+        GlobalScope.launch(Dispatchers.IO) {
             booksLoad.postValue(favoritesRepository.getFavoriteBooks())
         }
     }

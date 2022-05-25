@@ -8,7 +8,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
 class LoginViewModel : ViewModel() {
 
     private var userLogin : MutableLiveData<String> = MutableLiveData()

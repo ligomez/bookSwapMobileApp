@@ -53,7 +53,6 @@ class BookDetailFragment : Fragment() {
         return detailBinding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         book = args.book
@@ -67,8 +66,8 @@ class BookDetailFragment : Fragment() {
             tvLocation.text = book.location
             tvUserName.text = book.postedBy
 
-            ivFavorite.setOnClickListener{
-                if (!isFavorite){
+            ivFavorite.setOnClickListener {
+                if (!isFavorite) {
                     bookDetailViewModel.saveInFavorites(book)
                     ivFavorite.setImageDrawable(resources.getDrawable(R.drawable.ic_favorite))
                     isFavorite = true
@@ -77,7 +76,6 @@ class BookDetailFragment : Fragment() {
                     ivFavorite.setImageDrawable(resources.getDrawable(R.drawable.ic_favorite_border))
                 }
             }
-
         }
 
         // Setting location map

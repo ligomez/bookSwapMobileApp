@@ -10,12 +10,10 @@ import com.example.buku.R
 import com.example.buku.data.local.BookLocal
 import com.squareup.picasso.Picasso
 
-
 class FavoritesAdapter(
     private val booksList: ArrayList<BookLocal>,
     private val onItemClicked: (BookLocal) -> Unit,
 ) : RecyclerView.Adapter<FavoritesAdapter.ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -23,16 +21,13 @@ class FavoritesAdapter(
         return ViewHolder(view)
     }
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = booksList[position]
         holder.itemView.setOnClickListener { onItemClicked(booksList[position]) }
         holder.bind(book)
     }
 
-
     override fun getItemCount(): Int = booksList.size
-
 
     fun appendItems(newItems: ArrayList<BookLocal>) {
         booksList.clear()

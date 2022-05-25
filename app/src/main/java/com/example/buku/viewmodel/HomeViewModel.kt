@@ -5,16 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.buku.data.repository.HomeRepository
 import com.example.buku.model.Book
-import com.example.buku.model.BookList
 import com.example.buku.model.Category
-import com.example.buku.model.CategoryList
-import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.io.InputStream
 
-class HomeViewModel: ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val repository = HomeRepository()
 
@@ -24,32 +20,15 @@ class HomeViewModel: ViewModel() {
     private val categoriesLoad: MutableLiveData<ArrayList<Category>> = MutableLiveData()
     val onCategoriesLoaded: LiveData<ArrayList<Category>> = categoriesLoad
 
-
-    fun getBooksFromServer(){
+    fun getCategoriesFromFirebase() {
         GlobalScope.launch(Dispatchers.IO) {
-            booksLoad.postValue(repository.getBooks())
+            categoriesLoad.postValue(repository.getCategoriesFromFirebase())
         }
     }
 
-
-    fun loadMockBooksFromJason(booksString: InputStream?) {
-        val booksString = booksString?.bufferedReader().use { it!!.readText() }
-        val gson = Gson()
-        booksLoad.value = gson.fromJson(booksString, BookList::class.java)
-    }
-
-
-    fun loadMockCategoriesFromJason(categoriesString: InputStream) {
-        val categoriesString = categoriesString.bufferedReader().use { it!!.readText() }
-        val gson = Gson()
-        categoriesLoad.value = gson.fromJson(categoriesString, CategoryList::class.java)
-    }
-
-
     fun getBooksFromFirebase() {
-        GlobalScope.launch(Dispatchers.IO){
+        GlobalScope.launch(Dispatchers.IO) {
             booksLoad.postValue(repository.getBooksFromFirebase())
         }
     }
-
 }

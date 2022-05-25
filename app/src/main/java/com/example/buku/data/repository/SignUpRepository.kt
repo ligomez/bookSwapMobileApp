@@ -9,6 +9,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
+
 class SignUpRepository {
 
     private lateinit var auth: FirebaseAuth
@@ -22,6 +23,7 @@ class SignUpRepository {
             return e.message.toString()
         }
     }
+
 
     suspend fun createUserInDataBase(email: String, name: String): String {
         val db = Firebase.firestore

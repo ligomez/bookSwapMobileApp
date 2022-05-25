@@ -13,7 +13,6 @@ import com.example.buku.utils.isEmailValid
 import com.example.buku.view.ui.activities.MainActivity
 import com.example.buku.viewmodel.LoginViewModel
 
-
 class LoginFragment : Fragment() {
 
     private lateinit var loginBinding: FragmentLoginBinding
@@ -26,10 +25,8 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         loginBinding = FragmentLoginBinding.inflate(inflater, container, false)
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
-
         return loginBinding.root
     }
-
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
@@ -64,12 +61,10 @@ class LoginFragment : Fragment() {
         }
     }
 
-
     override fun onStart() {
         super.onStart()
         loginViewModel.checkUserLoggedin()
     }
-
 
     private fun onUserLoggedinCheckedSubscribe(result: Boolean?) {
         result?.let { isUserLoggedinChecked ->
@@ -78,14 +73,12 @@ class LoginFragment : Fragment() {
         }
     }
 
-
     private fun onUserLoggedinSubscribe(result: String?) {
         Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
             if (result.equals("Welcome")) {
                 findNavController().navigate(LoginFragmentDirections.actionNavAccountFragmentToFragmentProfile())
         }
     }
-
 
     private fun onSignUpButtonClicked() {
         findNavController().navigate(LoginFragmentDirections.actionNavAccountFragmentToSignUpFragment())

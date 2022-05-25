@@ -32,10 +32,8 @@ class SignUpFragment : Fragment() {
         // Inflate the layout for this fragment
         signUpBinding = FragmentSignUpBinding.inflate(inflater, container, false)
         signUpViewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
-
         return signUpBinding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
