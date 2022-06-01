@@ -3,6 +3,7 @@ package com.example.buku.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.buku.data.repository.LoginRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -19,7 +20,7 @@ class LoginViewModel : ViewModel() {
     private val loginRepository = LoginRepository()
 
     fun login(email: String, password: String) {
-        GlobalScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO){
             userLogin.postValue(loginRepository.signInUser(email, password))
         }
     }

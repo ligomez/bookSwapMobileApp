@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "table_book")
 data class BookLocal (
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name= "id") val id: Int,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name= "idLocal") val idLocal: Int,
+    @ColumnInfo(name = "idFirebase")val id: String = "",
     @ColumnInfo(name= "name")val name: String = "",
     @ColumnInfo(name= "author")val author: String = "",
     @ColumnInfo(name= "imageUrl")val imageUrl: String = "",

@@ -1,10 +1,11 @@
 package com.example.buku.data.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.buku.model.Book
+
 
 @Dao
 interface BookDao {
@@ -15,8 +16,11 @@ interface BookDao {
     @Query("SELECT * FROM table_book")
     fun getFavoriteBooks(): MutableList<BookLocal>
 
+    @Query("SELECT * FROM table_book WHERE idFirebase = :bookIdFirebase")
+    fun checkIsFavorite(bookIdFirebase: String): BookLocal
+
     @Delete
-    fun deleteBook(book: BookLocal)
+    fun deleteBook(bookLocal: BookLocal)
 
 
 }

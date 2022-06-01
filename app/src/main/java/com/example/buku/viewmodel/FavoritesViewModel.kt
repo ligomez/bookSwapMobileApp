@@ -3,6 +3,7 @@ package com.example.buku.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.buku.data.local.BookLocal
 import com.example.buku.data.repository.FavoritesRepository
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +18,7 @@ class FavoritesViewModel : ViewModel() {
     val onBooksLoaded: LiveData<MutableList<BookLocal>> = booksLoad
 
     fun getFavoriteBooks() {
-        GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             booksLoad.postValue(favoritesRepository.getFavoriteBooks())
         }
     }

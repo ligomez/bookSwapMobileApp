@@ -3,6 +3,7 @@ package com.example.buku.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.buku.data.repository.SignUpRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -19,13 +20,13 @@ class SignUpViewModel : ViewModel() {
     private val signUpRepository = SignUpRepository()
 
     fun signUp(email: String, password: String) {
-        GlobalScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO){
             userSignUp.postValue(signUpRepository.createUser(email, password))
         }
     }
 
     fun createUserAccount(email: String, name: String) {
-        GlobalScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO){
             createUser.postValue(signUpRepository.createUserInDataBase(email, name))
         }
     }

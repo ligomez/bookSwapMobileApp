@@ -3,6 +3,7 @@ package com.example.buku.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.buku.data.repository.HomeRepository
 import com.example.buku.model.Book
 import com.example.buku.model.Category
@@ -21,13 +22,13 @@ class HomeViewModel : ViewModel() {
     val onCategoriesLoaded: LiveData<ArrayList<Category>> = categoriesLoad
 
     fun getCategoriesFromFirebase() {
-        GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             categoriesLoad.postValue(repository.getCategoriesFromFirebase())
         }
     }
 
     fun getBooksFromFirebase() {
-        GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             booksLoad.postValue(repository.getBooksFromFirebase())
         }
     }

@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Book(
+    @SerializedName("id")
+    var id: String = "",
     @SerializedName("name")
     val name: String = "",
     @SerializedName("author")

@@ -17,7 +17,6 @@ class LoginRepository {
         return currentUser != null
     }
 
-
     suspend fun signInUser(email: String, password: String): String? {
         return try {
             auth = Firebase.auth
