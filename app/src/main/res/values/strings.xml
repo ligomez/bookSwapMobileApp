@@ -44,4 +44,5 @@
     <string name="dash">-</string>
     <string name="date">10/11/2021</string>
     <string name="marker_title">Your book is here</string>
+    <string name="bt_sign_out">Sign out</string>
 </resources>

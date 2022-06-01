@@ -11,8 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_favouritesFragment"
-            app:destination="@id/navFavouritesFragment" />
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/navFavoritesFragment" />
         <action
             android:id="@+id/action_navHomeFragment_to_bookDetailFragment"
             app:destination="@id/bookDetailFragment" />
@@ -21,12 +21,12 @@
             app:destination="@id/categoryDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/navFavouritesFragment"
-        android:name="com.example.buku.view.ui.fragments.FavouritesFragment"
-        android:label="fragment_favourites"
-        tools:layout="@layout/fragment_favourites" >
+        android:id="@+id/navFavoritesFragment"
+        android:name="com.example.buku.view.ui.fragments.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
         <action
-            android:id="@+id/action_navFavouritesFragment_to_navNewPostFragment"
+            android:id="@+id/action_navFavoritesFragment_to_navNewPostFragment"
             app:destination="@id/navNewPostFragment" />
     </fragment>
     <fragment
@@ -45,20 +45,20 @@
         tools:layout="@layout/fragment_messages" >
         <action
             android:id="@+id/action_messagesFragment_to_logInFragment"
-            app:destination="@id/navAccountFragment" />
+            app:destination="@id/navLoginFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/navAccountFragment"
-        android:name="com.example.buku.view.ui.fragments.LogInFragment"
-        android:label="fragment_log_in"
-        tools:layout="@layout/fragment_log_in" >
+        android:id="@+id/navLoginFragment"
+        android:name="com.example.buku.view.ui.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_navAccountFragment_to_fragmentProfile"
-            app:destination="@id/fragmentProfile" />
+            app:destination="@id/navProfileFragment" />
         <action
             android:id="@+id/action_navAccountFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/navSignUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/bookDetailFragment"
@@ -70,19 +70,26 @@
             app:argType="com.example.buku.model.Book" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentProfile"
-        android:name="com.example.buku.view.ui.fragments.FragmentProfile"
+        android:id="@+id/navProfileFragment"
+        android:name="com.example.buku.view.ui.fragments.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/signUpFragment"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navProfileFragment_to_navLoginFragment"
+            app:destination="@id/navLoginFragment" />
+    </fragment>
+     <fragment
+        android:id="@+id/navSignUpFragment"
         android:name="com.example.buku.view.ui.fragments.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
-            android:id="@+id/action_signUpFragment_to_fragmentProfile"
-            app:destination="@id/fragmentProfile" />
-    </fragment>
+            android:id="@+id/action_signUpFragment_to_navLoginFragment"
+            app:destination="@id/navLoginFragment" />
+         <action
+             android:id="@+id/action_navSignUpFragment_to_navProfileFragment"
+             app:destination="@id/navProfileFragment" />
+     </fragment>
     <fragment
         android:id="@+id/categoryDetailFragment"
         android:name="com.example.buku.view.ui.fragments.CategoryDetailFragment"

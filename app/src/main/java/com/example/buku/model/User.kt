@@ -1,6 +1,7 @@
 package com.example.buku.model
 
-class User {
-    var username: String = ""
-    var booksList: List<Book>? = null
-}
+data class User(
+    val id: String,
+    val email: String,
+    val name: String
+)

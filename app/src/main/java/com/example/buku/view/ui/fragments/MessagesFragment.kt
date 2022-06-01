@@ -1,14 +1,11 @@
 package com.example.buku.view.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.buku.R
 import com.example.buku.databinding.FragmentMessagesBinding
 import com.example.buku.model.Message
 import com.example.buku.model.MessageList
@@ -22,10 +19,9 @@ class MessagesFragment : Fragment() {
     private lateinit var listMessages: ArrayList<Message>
     private lateinit var messagesAdapter: MessagesAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         messagesBinding = FragmentMessagesBinding.inflate(inflater, container, false)
@@ -36,7 +32,7 @@ class MessagesFragment : Fragment() {
         super.onViewCreated(itemView, savedInstanceState)
 
         listMessages = loadMockMessagesFromJason()
-        messagesAdapter = MessagesAdapter(listMessages, onItemClicked = { onMessageClicked(it)})
+        messagesAdapter = MessagesAdapter(listMessages, onItemClicked = { onMessageClicked(it) })
 
         messagesBinding.rvMessages.apply {
             layoutManager = LinearLayoutManager(context)
@@ -55,5 +51,4 @@ class MessagesFragment : Fragment() {
         val gson = Gson()
         return gson.fromJson(messagesString, MessageList::class.java)
     }
-
 }

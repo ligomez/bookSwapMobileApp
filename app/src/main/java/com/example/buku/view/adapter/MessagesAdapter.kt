@@ -10,10 +10,10 @@ import com.example.buku.R
 import com.example.buku.model.Message
 import com.squareup.picasso.Picasso
 
-class MessagesAdapter (
+class MessagesAdapter(
     private val messagesList: ArrayList<Message>,
-    private val onItemClicked: (Message) -> Unit
-        ): RecyclerView.Adapter<MessagesAdapter.ViewHolder>() {
+    private val onItemClicked: (Message) -> Unit,
+) : RecyclerView.Adapter<MessagesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_message, parent, false)
@@ -22,14 +22,14 @@ class MessagesAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val message = messagesList[position]
-        holder.itemView.setOnClickListener { onItemClicked(messagesList[position])}
+        holder.itemView.setOnClickListener { onItemClicked(messagesList[position]) }
         holder.bind(message)
     }
 
     override fun getItemCount(): Int = messagesList.size
 
 
-    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var ivUserPhoto: ImageView = itemView.findViewById(R.id.ivUserPhoto)
         private var tvUserName: TextView = itemView.findViewById(R.id.tvUserName)
         private var tvNameBook: TextView = itemView.findViewById(R.id.tvNameBook)
@@ -43,7 +43,5 @@ class MessagesAdapter (
             tvMessage.text = message.message
             tvDate.text = message.date
         }
-
     }
-
 }
